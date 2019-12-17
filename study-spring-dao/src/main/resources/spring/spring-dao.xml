@@ -11,7 +11,7 @@
     <!-- ==================== -->
     <!-- （★）数据源          -->
     <!-- ==================== -->
-    <bean id="dataSource" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <bean id="dataSource" class="">
 
     </bean>
 </beans>
