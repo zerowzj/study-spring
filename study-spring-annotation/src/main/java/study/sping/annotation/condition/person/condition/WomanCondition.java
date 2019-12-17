@@ -1,10 +1,10 @@
-package study.sping.annotation.conditional.person.condition;
+package study.sping.annotation.condition.person.condition;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
-public class ManCondition implements Condition {
+public class WomanCondition implements Condition {
 
     @Override
     public boolean matches(ConditionContext context,

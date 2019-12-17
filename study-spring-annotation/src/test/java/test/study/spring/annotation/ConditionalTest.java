@@ -5,8 +5,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.sping.annotation.conditional.person.Person;
-import study.sping.annotation.conditional.person.PersonCfg;
+import study.sping.annotation.condition.person.Person;
+import study.sping.annotation.condition.person.PersonCfg;
 
 import java.util.Map;
 
