@@ -10,11 +10,11 @@ public class FtpServer implements Server {
 
     @Override
     public void start() {
-        LOGGER.info("ftp server starting...");
+        LOGGER.info("FTP server starting...");
     }
 
     @Override
     public void stop() {
-        LOGGER.info("ftp server stopping...");
+        LOGGER.info("FTP server stopping...");
     }
 }

@@ -10,11 +10,11 @@ public class HttpServer implements Server {
 
     @Override
     public void start() {
-        LOGGER.info("http server starting...");
+        LOGGER.info("HTTP server starting...");
     }
 
     @Override
     public void stop() {
-        LOGGER.info("http server stopping...");
+        LOGGER.info("HTTP server stopping...");
     }
 }
