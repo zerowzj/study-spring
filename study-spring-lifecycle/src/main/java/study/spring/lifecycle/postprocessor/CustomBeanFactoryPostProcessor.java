@@ -1,4 +1,4 @@
-package study.spring.lifecycle;
+package study.spring.lifecycle.postprocessor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +12,9 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
 
     public CustomBeanFactoryPostProcessor() {
         LOGGER.info("■ BeanFactoryPostProcessor===>实例化");
+        LOGGER.info("====================");
+        LOGGER.info("实例化");
+        LOGGER.info("====================");
     }
 
     @Override
@@ -22,5 +25,8 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
         //如果
 //        MyBean extBean = beanFactory.getBean(MyBean.class);
         LOGGER.info("■ BeanFactoryPostProcessor===>postProcessBeanFactory()");
+        LOGGER.info("====================");
+        LOGGER.info("实例化");
+        LOGGER.info("====================");
     }
 }

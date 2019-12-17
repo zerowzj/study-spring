@@ -6,13 +6,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <bean id="MyBean" class="study.spring.lifecycle.MyBean"/>
     <!-- ======================================== -->
     <!-- （★）BeanFactory Post Processor          -->
     <!-- ======================================== -->
-    <bean class="study.spring.lifecycle.CustomBeanFactoryPostProcessor"/>
+    <bean id="myBean" class="study.spring.lifecycle.MyBean"/>
+    <!-- ======================================== -->
+    <!-- （★）BeanFactory Post Processor          -->
+    <!-- ======================================== -->
+    <bean class="study.spring.lifecycle.postprocessor.CustomBeanFactoryPostProcessor"/>
     <!-- ======================================== -->
     <!-- （★）Bean Post Processor                 -->
     <!-- ======================================== -->
-    <bean class="study.spring.lifecycle.CustomBeanPostProcessor"/>
+    <bean class="study.spring.lifecycle.postprocessor.CustomBeanPostProcessor"/>
 </beans>
