@@ -1,4 +1,4 @@
-package study.sping.annotation.conditional.person;
+package study.sping.annotation.conditional.person.condition;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
