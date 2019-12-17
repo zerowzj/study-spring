@@ -7,21 +7,28 @@
     <!-- 加载Bean -->
     <context:component-scan base-package="study.spring.dao" use-default-filters="true">
     </context:component-scan>
-    <!-- ==================== -->
-    <!--（★）数据源          -->
-    <!-- ==================== -->
+    <!-- =============== -->
+    <!--（★）数据源      -->
+    <!-- =============== -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="url" value="jdbc:mysql://172.26.130.33:3306/remixed"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
-    <!-- ==================== -->
-    <!--（★）Mybatis         -->
-    <!-- ==================== -->
-    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- ========================= -->
+    <!--（★）SqlSessionFactory    -->
+    <!-- ========================= -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-cfg.xml"/>
         <property name="mapperLocations" value="study/spring/dao/mapper/**/*.xml"/>
         <property name="typeAliasesPackage" value="study.spring.dao.mapper"/>
+    </bean>
+    <!-- =============== -->
+    <!--（★）Mapper     -->
+    <!-- =============== -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="study.spring.dao.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 </beans>
