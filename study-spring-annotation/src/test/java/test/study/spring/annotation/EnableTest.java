@@ -9,7 +9,7 @@ import study.sping.annotation.enable.server.Server;
 
 public class EnableTest {
 
-    AnnotationConfigApplicationContext context;
+    private AnnotationConfigApplicationContext context;
 
     @Before
     public void init() {
