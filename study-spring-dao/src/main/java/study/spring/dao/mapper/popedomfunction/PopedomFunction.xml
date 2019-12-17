@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="study.springboot.dao.mapper.popedomfunction.PopedomFunctionDao">
+    <resultMap id="Base_Result_Map" type="PopedomFunctionEO" >
+        <result property="pfId" column="PF_ID"/>
+        <result property="pfName" column="PF_NAME"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        PF.PF_ID,
+        PF.PF_NAME
+    </sql>
+
+    <select id="get" parameterType="java.lang.Long" resultMap="Base_Result_Map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM popedom_function PF
+        WHERE PF.PF_ID = #{pfId}
+    </select>
+</mapper>
