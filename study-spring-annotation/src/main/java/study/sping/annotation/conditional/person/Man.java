@@ -1,4 +1,4 @@
-package study.sping.annotation.contional;
+package study.sping.annotation.conditional.person;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
