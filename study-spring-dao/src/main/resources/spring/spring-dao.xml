@@ -10,8 +10,16 @@
     <!--（★）数据源          -->
     <!-- ==================== -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="url" value=""/>
-        <property name="username" value=""/>
-        <property name="password" value=""/>
+        <property name="url" value="jdbc:mysql://172.26.130.33:3306/remixed"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+    <!-- ==================== -->
+    <!--（★）Mybatis         -->
+    <!-- ==================== -->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath*:mybatis-cfg.xml"/>
+        <property name="mapperLocations" value="study/spring/dao/mapper/**/**.xml"/>
+        <property name="typeAliasesPackage" value="study.spring.dao.mapper"/>
     </bean>
 </beans>

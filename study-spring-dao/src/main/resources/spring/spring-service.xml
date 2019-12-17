@@ -8,52 +8,5 @@
             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:component-scan base-package="study.spring.dao" use-default-filters="true">
     </context:component-scan>
-    <!-- ==================== -->
-    <!-- （★）代理            -->
-    <!-- ==================== -->
 
-    <bean id="customBeforeAdvice" class="study.spring.aop.schema.CustomBeforeAdvice"/>
-    <bean id="aopService" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="proxyInterfaces">
-            <value>study.spring.aop.AopService</value>
-        </property>
-        <property name="target">
-            <bean class="study.spring.aop.AopServiceImpl"/>
-        </property>
-        <property name="interceptorNames">
-            <list>
-                <value>customBeforeAdvice</value>
-            </list>
-        </property>
-    </bean>
-    <!-- （★）自动代理 -->
-    <!--    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">-->
-    <!--    </bean>-->
-    <!-- （★）自动代理 -->
-    <!--    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">-->
-    <!--    </bean>-->
-    <!-- ==================== -->
-    <!-- （★）标签            -->
-    <!-- ==================== -->
-    <bean id="monitor" class="study.spring.aop.w2.Monitor"/>
-    <bean id="logger" class="study.spring.aop.w2.Logger"/>
-    <aop:config>
-        <aop:pointcut id="myPointCut" expression="execution(public * study.spring.aop.*.*(..))"/>
-        <aop:aspect ref="monitor" order="6">
-            <aop:before method="doBefore" pointcut-ref="myPointCut"/>
-            <aop:after method="doAfter" pointcut-ref="myPointCut"/>
-            <aop:after-throwing method="doAfterThrowing" pointcut-ref="myPointCut"/>
-            <aop:after-returning method="doAfterReturning" pointcut-ref="myPointCut"/>
-            <aop:around method="doAround" pointcut-ref="myPointCut"/>
-        </aop:aspect>
-        <aop:aspect ref="logger" order="3">
-            <aop:before method="doBefore" pointcut-ref="myPointCut"/>
-        </aop:aspect>
-    </aop:config>
-    <!-- ==================== -->
-    <!-- （★）注解            -->
-    <!-- ==================== -->
-    <aop:aspectj-autoproxy/>
-    <bean class="study.spring.aop.annotation.MyAspect">
-    </bean>
 </beans>
