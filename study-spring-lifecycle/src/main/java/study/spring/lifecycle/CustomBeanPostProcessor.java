@@ -4,13 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import study.spring.lifecycle.MyBean;
 
-public class MyBeanPostProcessor implements BeanPostProcessor {
+public class CustomBeanPostProcessor implements BeanPostProcessor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MyBeanPostProcessor.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomBeanPostProcessor.class);
 
-    public MyBeanPostProcessor() {
+    public CustomBeanPostProcessor() {
         LOGGER.info("★ BeanPostProcessor===> 实例化");
     }
 

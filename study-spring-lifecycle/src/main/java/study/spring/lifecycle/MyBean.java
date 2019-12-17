@@ -14,30 +14,41 @@ public class MyBean {
     private String name;
 
     public MyBean() {
-        LOGGER.info("======>实例化");
+        LOGGER.info("====================");
+        LOGGER.info("实例化");
+        LOGGER.info("====================");
     }
 
     @PostConstruct
     public void postConstruct() {
-        LOGGER.info("======>执行 postConstruct");
+        LOGGER.info("====================");
+        LOGGER.info("执行 postConstruct");
+        LOGGER.info("====================");
     }
 
     @PreDestroy
     public void preDestroy() {
-        LOGGER.info("======>执行 preDestroy");
+        LOGGER.info("====================");
+        LOGGER.info("执行 preDestroy");
+        LOGGER.info("====================");
     }
 
     public void init() {
-        LOGGER.info("======>执行 init");
+        LOGGER.info("====================");
+        LOGGER.info("执行 init");
+        LOGGER.info("====================");
     }
 
     public void destroy() {
-        LOGGER.info("======>执行 destroy");
+        LOGGER.info("====================");
+        LOGGER.info("执行 destroy");
+        LOGGER.info("====================");
     }
 
-
     public void setName(String name) {
-        LOGGER.info("======>依赖注入");
+        LOGGER.info("====================");
+        LOGGER.info("依赖注入");
+        LOGGER.info("====================");
         this.name = name;
     }
 
