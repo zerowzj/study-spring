@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="study.springboot.dao.mapper.popedomrole.PopedomRoleDao">
+<mapper namespace="study.spring.dao.mapper.popedomrole.PopedomRoleDao">
     <resultMap id="Base_Result_Map" type="PopedomRoleEO" >
         <result property="prId" column="PR_ID"/>
         <result property="prName" column="PR_NAME"/>
@@ -10,10 +10,6 @@
         PR.PR_ID,
         PR.PR_NAME
     </sql>
-
-    <insert id="insert" parameterType="UserAdminEO">
-        INSERT INTO popedom_role (PR_ID) VALUES (#{prId})
-    </insert>
 
     <select id="get" parameterType="java.lang.Long" resultMap="Base_Result_Map">
         SELECT
