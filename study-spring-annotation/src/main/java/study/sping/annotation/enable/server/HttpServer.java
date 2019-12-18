@@ -1,20 +1,19 @@
 package study.sping.annotation.enable.server;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//@Component
+@Slf4j
 public class HttpServer implements Server {
-
-    public static final Logger LOGGER = LoggerFactory.getLogger(HttpServer.class);
 
     @Override
     public void start() {
-        LOGGER.info("HTTP server starting...");
+        log.info("HTTP server starting...");
     }
 
     @Override
     public void stop() {
-        LOGGER.info("HTTP server stopping...");
+        log.info("HTTP server stopping...");
     }
 }

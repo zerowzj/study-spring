@@ -1,14 +1,12 @@
 package study.sping.annotation.condition.person;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Man implements Person {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(Man.class);
 
     @Override
     public void sayHi() {
-        LOGGER.info("i am man");
+        log.info("i am man");
     }
 }

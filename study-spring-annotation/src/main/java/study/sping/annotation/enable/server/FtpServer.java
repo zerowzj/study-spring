@@ -1,20 +1,20 @@
 package study.sping.annotation.enable.server;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //@Component
+@Slf4j
 public class FtpServer implements Server {
-
-    public static final Logger LOGGER = LoggerFactory.getLogger(FtpServer.class);
 
     @Override
     public void start() {
-        LOGGER.info("FTP server starting...");
+        log.info("FTP server starting...");
     }
 
     @Override
     public void stop() {
-        LOGGER.info("FTP server stopping...");
+        log.info("FTP server stopping...");
     }
 }
