@@ -5,6 +5,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 public class ManCondition implements Condition {
@@ -12,7 +13,7 @@ public class ManCondition implements Condition {
     @Override
     public boolean matches(ConditionContext context,
                            AnnotatedTypeMetadata metadata) {
-        //获取ioc使用的beanFactory
+        //bean工厂，可以获取容器中的所有bean
         ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
         //获取当前环境信息
         Environment environment = context.getEnvironment();
@@ -20,7 +21,8 @@ public class ManCondition implements Condition {
         BeanDefinitionRegistry registry = context.getRegistry();
         //获取类加载器
         ClassLoader classLoader = context.getClassLoader();
-        context.getResourceLoader();
+        //资源信息
+        ResourceLoader resourceLoader = context.getResourceLoader();
         return true;
     }
 }
