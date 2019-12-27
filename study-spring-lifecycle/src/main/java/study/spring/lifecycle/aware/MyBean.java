@@ -1,5 +1,6 @@
 package study.spring.lifecycle.aware;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -10,37 +11,36 @@ import org.springframework.context.ApplicationContextAware;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Slf4j
 public class MyBean implements BeanNameAware, BeanFactoryAware, ApplicationContextAware {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(MyBean.class);
 
     //@Value("123123123")
     private String name;
 
     @PostConstruct
     public void postConstruct() {
-        LOGGER.info("======>执行 postConstruct");
+        log.info("======>执行 postConstruct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        LOGGER.info("======>执行 preDestroy");
+        log.info("======>执行 preDestroy");
     }
 
     public void initMethod() {
-        LOGGER.info("======>执行 initMethod");
+        log.info("======>执行 initMethod");
     }
 
     public void destroyMethod() {
-        LOGGER.info("======>执行 destroyMethod");
+        log.info("======>执行 destroyMethod");
     }
 
     public MyBean() {
-        LOGGER.info("======>实例化");
+        log.info("======>实例化");
     }
 
     public void setName(String name) {
-        LOGGER.info("======>依赖注入");
+        log.info("======>依赖注入");
         this.name = name;
     }
 
@@ -50,16 +50,16 @@ public class MyBean implements BeanNameAware, BeanFactoryAware, ApplicationConte
 
     @Override
     public void setBeanName(String name) {
-        LOGGER.info("======>执行BeanNameAware.setBeanName()");
+        log.info("======>执行BeanNameAware.setBeanName()");
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        LOGGER.info("======>执行BeanFactoryAware.setBeanFactory()");
+        log.info("======>执行BeanFactoryAware.setBeanFactory()");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        LOGGER.info("======>执行ApplicationContextAware.setApplicationContext()");
+        log.info("======>执行ApplicationContextAware.setApplicationContext()");
     }
 }
