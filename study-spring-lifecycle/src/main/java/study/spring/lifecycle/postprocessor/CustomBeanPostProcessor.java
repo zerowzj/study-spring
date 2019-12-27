@@ -1,17 +1,15 @@
 package study.spring.lifecycle.postprocessor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import study.spring.lifecycle.MyBean;
 
+@Slf4j
 public class CustomBeanPostProcessor implements BeanPostProcessor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CustomBeanPostProcessor.class);
-
     public CustomBeanPostProcessor() {
-        LOGGER.info("★ BeanPostProcessor===> 实例化");
+        log.info("★ BeanPostProcessor===> 实例化");
     }
 
     /**
@@ -21,7 +19,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean,
                                                   String beanName) throws BeansException {
         if (bean instanceof MyBean) {
-            LOGGER.info("★ BeanPostProcessor===> postProcessBeforeInitialization");
+            log.info("★ BeanPostProcessor===> postProcessBeforeInitialization");
         }
         return bean;
     }
@@ -33,7 +31,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean,
                                                  String beanName) throws BeansException {
         if (bean instanceof MyBean) {
-            LOGGER.info("★ BeanPostProcessor===> postProcessAfterInitialization");
+            log.info("★ BeanPostProcessor===> postProcessAfterInitialization");
         }
         return bean;
     }
