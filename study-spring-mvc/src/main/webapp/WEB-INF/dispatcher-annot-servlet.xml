@@ -11,19 +11,19 @@
     <!-- （★）注解驱动       -->
     <!-- =================== -->
     <mvc:annotation-driven>
-        <mvc:message-converters>
-            <ref bean="formMessageConverter"/>
-        </mvc:message-converters>
+<!--        <mvc:message-converters>-->
+<!--            <ref bean="formMessageConverter"/>-->
+<!--        </mvc:message-converters>-->
     </mvc:annotation-driven>
     <!-- =================== -->
     <!-- （★）配置拦截器      -->
     <!-- =================== -->
     <mvc:interceptors>
-        <bean class="study.spring.mvc.support.interceptor.WatchDogInterceptor"/>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <ref bean="demoInterceptor"/>
-        </mvc:interceptor>
+<!--        <bean class="study.spring.mvc.support.interceptor.WatchDogInterceptor"/>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <ref bean="demoInterceptor"/>-->
+<!--        </mvc:interceptor>-->
     </mvc:interceptors>
     <!-- =================== -->
     <!-- （★）视图解析器      -->

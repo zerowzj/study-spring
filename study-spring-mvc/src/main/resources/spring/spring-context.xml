@@ -50,37 +50,13 @@
     <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">-->
     <!--</bean>-->
     <!-- （★）声明 -->
-    <bean id="monitor" class="study.spring.base.aop.Monitor"/>
-    <bean id="logger" class="study.spring.base.aop.Logger"/>
-    <aop:config>
-        <aop:pointcut id="myPointCut" expression="execution(public * study.spring.mvc.service..*.*(..))"/>
-        <aop:aspect ref="monitor" order="6">
-            <aop:before method="doBefore" pointcut-ref="myPointCut"/>
-            <aop:after method="doAfter" pointcut-ref="myPointCut"/>
-            <aop:after-throwing method="doAfterThrowing" pointcut-ref="myPointCut"/>
-            <aop:after-returning method="doAfterReturning" pointcut-ref="myPointCut"/>
-            <aop:around method="doAround" pointcut-ref="myPointCut"/>
-        </aop:aspect>
-        <aop:aspect ref="logger" order="3">
-            <aop:before method="doBefore" pointcut-ref="myPointCut"/>
-        </aop:aspect>
-    </aop:config>
+
     <!-- （★）注解 -->
     <!--<aop:aspectj-autoproxy/>-->
     <!--<bean class="study.springmvcmvc.base.aop.MyAspect">-->
     <!--</bean>-->
-    <!-- ==================== -->
-    <!-- 【扩展点】            -->
-    <!-- ==================== -->
-    <bean class="study.spring.base.ext.MyBean" init-method="initMethod" destroy-method="destroyMethod">
-        <property name="name" value="abc"/>
-    </bean>
-    <bean class="study.spring.base.ext.MyBeanPostProcessor"/>
-    <bean class="study.spring.base.ext.MyInstantiationAwareBeanPostProcessor"/>
-    <bean class="study.spring.base.ext.MyBeanFactoryPostProcessor"/>
-    <bean class="study.spring.base.ext.MyBeanDefinitionRegistryPostProcessor"/>
+
     <!-- ==================== -->
     <!-- 【委托代理过滤器】     -->
     <!-- ==================== -->
-    <bean id="myFilter" class="study.spring.mvc.support.filter.DemoFilter"/>
 </beans>
