@@ -16,12 +16,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AfterAdvice {
 
-    @After(value = "within(study.springboot.aop.aspect.service.AfterService)")
+    @After(value = "within(study.spring.aop.aspect.service.AfterService)")
     public void after(JoinPoint joinPoint) {
         log.info(">>>>>> after");
     }
 
-    @After(value = "@within(study.springboot.aop.aspect.Label)")
+    @After(value = "@within(study.spring.aop.aspect.Label)")
     public void after1(JoinPoint joinPoint) {
         log.info(">>>>>> after");
     }

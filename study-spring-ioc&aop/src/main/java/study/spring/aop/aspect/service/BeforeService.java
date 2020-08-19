@@ -2,7 +2,7 @@ package study.spring.aop.aspect.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import study.springboot.aop.aspect.Label;
+import study.spring.aop.aspect.Label;
 
 @Slf4j
 @Component

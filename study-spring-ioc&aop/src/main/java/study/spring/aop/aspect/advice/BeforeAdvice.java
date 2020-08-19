@@ -6,7 +6,7 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
-import study.springboot.aop.aspect.Label;
+import study.spring.aop.aspect.Label;
 
 /**
  * （★）前置通知
@@ -16,7 +16,7 @@ import study.springboot.aop.aspect.Label;
 @Component
 public class BeforeAdvice {
 
-    @Before(value = "execution(* study.springboot.aop.aspect.service.BeforeService.*(..))")
+    @Before(value = "execution(* study.spring.aop.aspect.service.BeforeService.*(..))")
     public void before(JoinPoint joinPoint) {
         Signature signature = joinPoint.getSignature();
         String sname = signature.getName();

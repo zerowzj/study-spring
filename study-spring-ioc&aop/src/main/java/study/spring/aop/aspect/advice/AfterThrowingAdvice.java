@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AfterThrowingAdvice {
 
-    @AfterThrowing(value = "target(study.springboot.aop.aspect.service.AfterThrowingService)",
+    @AfterThrowing(value = "target(study.spring.aop.aspect.service.AfterThrowingService)",
             throwing = "ex")
     public void afterThrowing(JoinPoint joinPoint, Throwable ex) {
         log.info(">>>>>>>>>>  after throwing");

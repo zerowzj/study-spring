@@ -15,7 +15,7 @@ public class ScopeCfg {
     @Bean
     public CustomScopeConfigurer customScopeConfigurer() {
         CustomScopeConfigurer scopeCfg = new CustomScopeConfigurer();
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap();
         map.put("timeScope", new TimeScope());
         scopeCfg.setScopes(map);
         return scopeCfg;

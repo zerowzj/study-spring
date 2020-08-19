@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AfterReturningAdvice {
 
-    @AfterReturning(value = "target(study.springboot.aop.aspect.service.AfterReturningService)",
+    @AfterReturning(value = "target(study.spring.aop.aspect.service.AfterReturningService)",
             returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         log.info(">>>>>> after returning");
