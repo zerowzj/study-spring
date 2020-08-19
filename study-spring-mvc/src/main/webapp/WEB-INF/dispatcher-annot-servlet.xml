@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- =================== -->
+    <!-- （★）注解驱动       -->
+    <!-- =================== -->
+    <context:component-scan base-package="study.spring" use-default-filters="true">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <!-- =================== -->
+    <!-- （★）注解驱动       -->
+    <!-- =================== -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <ref bean="formMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!-- =================== -->
+    <!-- （★）配置拦截器      -->
+    <!-- =================== -->
+    <mvc:interceptors>
+        <bean class="study.spring.mvc.support.interceptor.WatchDogInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <ref bean="demoInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!-- =================== -->
+    <!-- （★）视图解析器      -->
+    <!-- =================== -->
+    <mvc:view-resolvers>
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+    </mvc:view-resolvers>
+</beans>

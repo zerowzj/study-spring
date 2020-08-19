@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 加载Bean-->
+    <context:component-scan base-package="study.spring" use-default-filters="true">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <!--&lt;!&ndash; 文本报文转换器 &ndash;&gt;-->
+    <!--<bean id="stringMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; Json报文转换器 &ndash;&gt;-->
+    <!--<bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+        <!--<property name="supportedMediaTypes">-->
+            <!--<list>-->
+                <!--<value>text/html; charset=UTF-8</value>-->
+                <!--<value>text/plain;charset=UTF-8</value>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!-- 报文转换器 -->
+    <!--<bean id="formMessageConverter" class="org.springframework.http.converter.FormHttpMessageConverter">-->
+        <!--<property name="supportedMediaTypes">-->
+            <!--<list>-->
+                <!--<value>text/html; charset=UTF-8</value>-->
+                <!--<value>text/plain;charset=UTF-8</value>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+                <!--<value>application/x-www-form-urlencoded</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!-- 拦截器 -->
+    <bean id="demoInterceptor" class="study.spring.mvc.support.interceptor.DemoInterceptor"/>
+    <bean id="watchDogInterceptor" class="study.spring.mvc.support.interceptor.WatchDogInterceptor"/>
+    <!-- 容器上下文 -->
+    <bean class="study.spring.mvc.support.context.SpringContext"/>
+</beans>
