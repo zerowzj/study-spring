@@ -11,9 +11,9 @@
     <!-- （★）注解驱动       -->
     <!-- =================== -->
     <mvc:annotation-driven>
-<!--        <mvc:message-converters>-->
-<!--            <ref bean="formMessageConverter"/>-->
-<!--        </mvc:message-converters>-->
+        <mvc:message-converters>
+            <ref bean="jsonMessageConverter"/>
+        </mvc:message-converters>
     </mvc:annotation-driven>
     <!-- =================== -->
     <!-- （★）配置拦截器      -->
