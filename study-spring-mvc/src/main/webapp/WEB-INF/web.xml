@@ -1,0 +1,133 @@
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <!-- =================== -->
+    <!-- （★）上下文参数      -->
+    <!-- =================== -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:spring/spring-context.xml
+        </param-value>
+    </context-param>
+    <!-- =================== -->
+    <!-- （★）监听器Listener  -->
+    <!-- =================== -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- ==================== -->
+    <!-- （★）过滤器Filter     -->
+    <!-- ==================== -->
+    <!--<filter>-->
+    <!--<description>安全框架Shiro</description>-->
+    <!--<filter-name>shiroFilter</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--&lt;!&ndash; 设置true由servlet容器控制filter的生命周期 &ndash;&gt;-->
+    <!--<init-param>-->
+    <!--<param-name>targetFilterLifecycle</param-name>-->
+    <!--<param-value>true</param-value>-->
+    <!--</init-param>-->
+    <!--&lt;!&ndash;设置spring容器filter的bean id，如果不设置则找与filter-name一致的bean&ndash;&gt;-->
+    <!--<init-param>-->
+    <!--<param-name>targetName</param-name>-->
+    <!--<param-value>shiroFilter</param-value>-->
+    <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+    <!--<filter-name>shiroFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!-- Spring Security -->
+    <!--<filter>-->
+    <!--<filter-name>springSecurityFilterChain</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+    <!--<filter-name>springSecurityFilterChain</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+    <filter>
+        <description>自定义Filter</description>
+        <filter-name>myFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- CAS -->
+    <!--<filter>-->
+    <!--<description>负责对ticket的校验工作，这个过滤器要放在第一个位置</description>-->
+    <!--<filter-name>ticketValidationFilter</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+    <!--<filter-name>ticketValidationFilter</filter-name>-->
+    <!--<url-pattern>/</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!--<filter>-->
+    <!--<description>负责用户的认证工作</description>-->
+    <!--<filter-name>authFilter</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+    <!--<filter-name>authFilter</filter-name>-->
+    <!--<url-pattern>/</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!-- =================== -->
+    <!-- （★）Servlet        -->
+    <!-- =================== -->
+    <servlet>
+        <description>Spring MVC前端控制器</description>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                /WEB-INF/dispatcher-mvc-servlet.xml
+                <!--                ,/WEB-INF/dispatcher-mvc-servlet.xml-->
+            </param-value>
+        </init-param>
+        <init-param>
+            <description>是否探测所有 HandlerMapping</description>
+            <param-name>detectAllHandlerMappings</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <description>是否探测所有 HandlerAdapter</description>
+            <param-name>detectAllHandlerAdapters</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <description>是否探测所有 HandlerExceptionResolver</description>
+            <param-name>detectAllHandlerExceptionResolvers</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <description>是否探测所有 ViewResolver</description>
+            <param-name>detectAllViewResolvers</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <description>是否发布事件</description>
+            <param-name>publishEvents</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <description>是否发布上下文</description>
+            <param-name>publishContext</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
