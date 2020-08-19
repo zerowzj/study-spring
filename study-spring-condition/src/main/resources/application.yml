@@ -1,0 +1,21 @@
+#
+logging:
+  config: classpath:logback.xml
+#
+spring:
+  application:
+    name: study-springboot-starter
+  main:
+    web-application-type: none
+#####################
+#（★）条件注入
+#####################
+#是否装配某个Bean
+person:
+  enabled: false
+#根据配置决定装配某个Bean
+car:
+  brand: benz
+#####################
+#（★）条件装配
+#####################

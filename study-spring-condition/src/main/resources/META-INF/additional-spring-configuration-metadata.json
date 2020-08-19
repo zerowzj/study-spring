@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "hello.name",
+      "type": "java.lang.String",
+      "defaultValue": "wangzhj",
+      "description": "姓名"
+    },
+    {
+      "name": "hello.greeting",
+      "type": "java.lang.String",
+      "defaultValue": "welcome",
+      "description": "欢迎语"
+    }
+  ]
+}
