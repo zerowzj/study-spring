@@ -17,16 +17,17 @@ public class DemoBeanDefinitionParser implements BeanDefinitionParser {
         Object source = context.extractSource(element);
         //
         XmlReaderContext readerContext = context.getReaderContext();
+        
         //定义Bean
-        RootBeanDefinition handlerMappingDef = new RootBeanDefinition(Person.class);
-        handlerMappingDef.setSource(source);
-        handlerMappingDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
-        handlerMappingDef.getPropertyValues().add("id", "cutesource");
-        handlerMappingDef.getPropertyValues().add("name", "fdasfads");
-        handlerMappingDef.getPropertyValues().add("age", "100");
-        //
+        RootBeanDefinition rbd = new RootBeanDefinition(Person.class);
+        rbd.setSource(source);
+        rbd.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
+        rbd.getPropertyValues().add("id", "cutesource");
+        rbd.getPropertyValues().add("name", "fdasfads");
+        rbd.getPropertyValues().add("age", "100");
+        //注册Bean
         BeanDefinitionRegistry registry = readerContext.getRegistry();
-        registry.registerBeanDefinition("cutesource", handlerMappingDef);
+        registry.registerBeanDefinition("cutesource", rbd);
 
 //        context.registerComponent(new BeanComponentDefinition(handlerMappingDef, ""));
 //        context.popAndRegisterContainingComponent();
