@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.springframework.org/schema/person"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:beans="http://www.springframework.org/schema/beans"
+			targetNamespace="http://www.springframework.org/schema/person"
+			elementFormDefault="qualified"
+			attributeFormDefault="unqualified">
+	<!-- 引入 -->
+	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
+	<!-- 引入 -->
+	<xsd:element name="person">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="beans:identifiedType">
+					<xsd:attribute name="name" type="xsd:string"/>
+					<xsd:attribute name="age" type="xsd:int"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
