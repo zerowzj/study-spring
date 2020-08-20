@@ -10,7 +10,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Slf4j
-@Component
 public class MyBean implements InitializingBean, DisposableBean {
 
     private MyCar myCar;
