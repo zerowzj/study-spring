@@ -9,6 +9,7 @@ public class DemoBeanDefinitionParser implements BeanDefinitionParser {
 
     @Override
     public BeanDefinition parse(Element element, ParserContext parserContext) {
+        element.getAttribute("");
         return null;
     }
 }
