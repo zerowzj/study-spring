@@ -22,12 +22,12 @@ public class MyBean {
     }
 
     public void setName(String name) {
-        log.info("set name value");
+        log.info(">>>>>> set name value");
         this.name = name;
     }
 
     public void setAge(int age) {
-        log.info("set age value");
+        log.info(">>>>>> set age value");
         this.age = age;
     }
 }
