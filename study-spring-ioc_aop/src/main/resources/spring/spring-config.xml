@@ -7,4 +7,5 @@
       <property name="name" value="wangzhj"/>
       <property name="age" value="100"/>
    </bean>
+   
 </beans>
