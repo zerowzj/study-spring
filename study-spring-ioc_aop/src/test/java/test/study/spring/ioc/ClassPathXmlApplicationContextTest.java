@@ -7,12 +7,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.ioc.bean.MyBean;
 
 @Slf4j
-public class TTT {
+public class ClassPathXmlApplicationContextTest {
 
     @Test
-    public void test(){
+    public void test() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-ioc/spring-ioc-config.xml");
-        MyBean myBean = (MyBean)ctx.getBean("myBean");
+        MyBean myBean = (MyBean) ctx.getBean("myBean");
         log.info("{}", myBean);
     }
 }
