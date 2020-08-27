@@ -3,21 +3,22 @@ package study.spring.ioc.bean;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @Getter
 @ToString
-public class MyBean {
+public class MyConfigBean {
 
     private String name;
-
-    private int age;
 
     static {
         log.info(">>>>>> 初始化");
     }
 
-    public MyBean() {
+    public MyConfigBean() {
         log.info(">>>>>> 实例化");
     }
 
@@ -26,8 +27,11 @@ public class MyBean {
         this.name = name;
     }
 
-    public void setAge(int age) {
-        log.info(">>>>>> set age value");
-        this.age = age;
+    public void init() {
+        log.info(">>>>>> init");
+    }
+
+    public void destroy() {
+        log.info(">>>>>> destroy");
     }
 }

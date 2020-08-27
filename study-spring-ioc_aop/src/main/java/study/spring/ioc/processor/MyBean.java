@@ -36,7 +36,6 @@ public class MyBean implements InitializingBean, DisposableBean {
     public void afterPropertiesSet() throws Exception {
         log.info(">>>>>> afterPropertiesSet 初始化");
     }
-
     @Override
     public void destroy() throws Exception {
         log.info(">>>>>> destroy 清理");
@@ -47,4 +46,5 @@ public class MyBean implements InitializingBean, DisposableBean {
         log.info(">>>>>> 设置 MyCar");
         this.myCar = myCar;
     }
+
 }

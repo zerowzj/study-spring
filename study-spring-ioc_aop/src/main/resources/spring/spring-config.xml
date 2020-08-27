@@ -3,9 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <bean id="myBean" class="study.spring.ioc.bean.MyBean">
+   <bean id="myConfigBean" class="study.spring.ioc.bean.MyConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
-      <property name="age" value="100"/>
    </bean>
    
 </beans>
