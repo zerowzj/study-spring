@@ -26,5 +26,7 @@ public class AnnotationConfigApplicationContextTest {
         TimeUnit.SECONDS.sleep(5);
         MyAnnotBean myBean = (MyAnnotBean) ctx.getBean("myAnnotBean");
         log.info("{}", myBean);
+
+        ctx.close();
     }
 }
