@@ -1,4 +1,4 @@
-package test.study.spring.ioc;
+package test.study.spring.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

@@ -3,30 +3,32 @@ package test.study.spring.ioc;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.ioc.bean.MyAnnotBean;
 import study.spring.ioc.bean.MyConfigBean;
+import study.spring.ioc.bean.MyLifecycleBean;
 
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-//@ComponentScan("study.spring.ioc.bean")
-public class AnnotationConfigApplicationContextTest {
+public class LifecycleTest {
 
     @Test
     public void test() throws Exception {
+        String configLoaction = "spring/spring-lifecycle.xml";
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLoaction);
+        //不显示close不执行destroy-method方法
+        ctx.close();
+    }
+
+    @Test
+    public void test2(){
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        //结合注解@ComponentScan使用
-//        ctx.register(AnnotationConfigApplicationContextTest.class);
-        //
-        ctx.scan("study.spring.ioc.bean");
+        ctx.registerBean(MyLifecycleBean.class);
         //需要手动刷新
         ctx.refresh();
-        log.info("容器启动完成");
-
-        TimeUnit.SECONDS.sleep(5);
-        MyAnnotBean myBean = (MyAnnotBean) ctx.getBean("myAnnotBean");
+        MyLifecycleBean myBean = (MyLifecycleBean) ctx.getBean("myLifecycleBean");
         log.info("{}", myBean);
-
         ctx.close();
     }
 }
