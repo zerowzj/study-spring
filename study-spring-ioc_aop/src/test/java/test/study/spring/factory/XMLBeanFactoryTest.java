@@ -17,6 +17,7 @@ public class XMLBeanFactoryTest {
     public void test() throws Exception{
         ClassPathResource resource = new ClassPathResource(CONFIG_LOCATION);
         XmlBeanFactory beanFactory = new XmlBeanFactory(resource);
+
         log.info("容器启动完成");
 
         //
