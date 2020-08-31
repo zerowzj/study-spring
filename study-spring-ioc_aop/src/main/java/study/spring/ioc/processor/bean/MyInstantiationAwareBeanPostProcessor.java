@@ -12,41 +12,41 @@ import java.util.Arrays;
  * Bean实例化前后，即Bean的构造函数执行前后
  */
 @Slf4j
-public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
+public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
 
-    public CustomInstantiationAwareBeanPostProcessor() {
+    public MyInstantiationAwareBeanPostProcessor() {
         //log.info(">>>>>> 实例化InstantiationAwareBeanPostProcessor");
     }
 
     @Override
     public int getOrder() {
-        return 10;
+        return 1;
     }
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化前的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor2 实例化前的后处理");
         return null;
     }
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化后的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor2 实例化后的后处理");
         return true;
     }
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor set注入之前的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor2 set注入之前的后处理");
         Arrays.stream(pvs.getPropertyValues()).forEach(e -> {
             log.info("{}= {}", e.getName(), e.getValue());
         });
         return pvs;
     }
 
-    //************************************
-    // 以下是继承BeanPostProcessor
-    //************************************
+//    //************************************
+//    // 以下是继承BeanPostProcessor
+//    //************************************
 //    @Override
 //    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 //        log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化前的后处理");

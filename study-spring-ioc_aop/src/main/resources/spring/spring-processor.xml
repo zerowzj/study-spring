@@ -8,8 +8,9 @@
       <property name="name" value="wangzhj" />
    </bean>
 
-   <bean class="study.spring.ioc.processor.bean.CustomBeanPostProcessor" />
+<!--   <bean class="study.spring.ioc.processor.bean.CustomBeanPostProcessor" />-->
 <!--   <bean class="study.spring.ioc.processor.bean.MyBeanPostProcessor" />-->
    <bean class="study.spring.ioc.processor.bean.CustomInstantiationAwareBeanPostProcessor" />
+   <bean class="study.spring.ioc.processor.bean.MyInstantiationAwareBeanPostProcessor" />
 <!--   <bean class="study.spring.ioc.processor.bean.CustomMergedBeanDefinitionPostProcessor" />-->
 </beans>
