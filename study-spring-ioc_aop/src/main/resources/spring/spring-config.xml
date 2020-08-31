@@ -2,9 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+   <!-- ioc -->
    <bean id="myConfigBean" class="study.spring.ioc.bean.MyConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
    </bean>
-   
+
+   <!-- aop -->
+   <bean id="myConfigBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="target" ref="myConfigBean"/>
+<!--      <property name="interceptorNames">-->
+<!--         <list>-->
+<!--            <value></value>-->
+<!--            <value></value>-->
+<!--         </list>-->
+<!--      </property>-->
+   </bean>
 </beans>

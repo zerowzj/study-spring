@@ -15,8 +15,8 @@ public class LifecycleTest {
 
     @Test
     public void test() throws Exception {
-        String configLoaction = "spring/spring-lifecycle.xml";
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLoaction);
+        String configLocation = "spring/spring-lifecycle.xml";
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
         //不显示close不执行destroy-method方法
         ctx.close();
     }
