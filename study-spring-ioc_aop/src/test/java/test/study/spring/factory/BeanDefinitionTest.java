@@ -23,6 +23,7 @@ public class BeanDefinitionTest {
         ConstructorArgumentValues argumentValues = new ConstructorArgumentValues();
 //        argumentValues.addIndexedArgumentValue();
 //        argumentValues.addArgumentValues();
+        bd.setConstructorArgumentValues(argumentValues);
         //setter注入
         MutablePropertyValues propertyValues = new MutablePropertyValues();
         propertyValues.add("name", "wangzhj");
