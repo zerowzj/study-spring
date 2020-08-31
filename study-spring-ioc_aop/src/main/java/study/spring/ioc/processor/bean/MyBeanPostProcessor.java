@@ -4,38 +4,30 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import study.spring.ioc.processor.MyBean;
 
-/**
- * 该处初始化指以下方法
- * （1）@PostConstruct注解的方法
- * （2）实现InitializingBean的
- * （3）init-method指定的方法
- */
 @Slf4j
 @Component
-public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
+public class MyBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public int getOrder() {
-        return 1000;
+        return 100;
     }
 
-    public CustomBeanPostProcessor() {
+    public MyBeanPostProcessor() {
         //log.info(">>>>>> 实例化 BeanPostProcessor");
     }
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> BeanPostProcessor初始化前的后置处理");
+        log.info(">>>>>> BeanPostProcessor2初始化前的后置处理");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> BeanPostProcessor初始化后的后置处理");
+        log.info(">>>>>> BeanPostProcessor2初始化后的后置处理");
         return bean;
     }
 }

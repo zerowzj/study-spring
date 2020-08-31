@@ -3,12 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <bean name="myLifecycleBean" class="study.spring.ioc.bean.MyLifecycleBean" init-method="myInit" destroy-method="myDestroy">
+   <bean name="myLifecycleBean" class="study.spring.ioc.bean.MyLifecycleBean"
+         init-method="myInit" destroy-method="myDestroy">
       <property name="name" value="wangzhj" />
    </bean>
 
    <bean class="study.spring.ioc.processor.bean.CustomBeanPostProcessor" />
+<!--   <bean class="study.spring.ioc.processor.bean.MyBeanPostProcessor" />-->
    <bean class="study.spring.ioc.processor.bean.CustomInstantiationAwareBeanPostProcessor" />
-
 <!--   <bean class="study.spring.ioc.processor.bean.CustomMergedBeanDefinitionPostProcessor" />-->
 </beans>

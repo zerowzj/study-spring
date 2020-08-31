@@ -18,7 +18,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 
     @Override
     public int getOrder() {
-        return 1000;
+        return 1;
     }
 
     @Override
@@ -39,10 +39,9 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
         return pvs;
     }
 
-    /**
-     * **************************************
-     * 以下是继承BeanPostProcessor
-     */
+    //************************************
+    // 以下是继承BeanPostProcessor
+    //************************************
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化前的后置处理");
