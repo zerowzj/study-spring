@@ -19,7 +19,7 @@ public class BeanDefinitionTest {
         bd.setBeanClassName("study.spring.ioc.bean.MyConfigBean");
         log.info("is_lazy_init= {}", bd.isLazyInit());
         log.info("scope= {}", bd.getScope());
-        //构造器注入
+        //constructor注入
         ConstructorArgumentValues argumentValues = new ConstructorArgumentValues();
 //        argumentValues.addIndexedArgumentValue();
 //        argumentValues.addArgumentValues();
