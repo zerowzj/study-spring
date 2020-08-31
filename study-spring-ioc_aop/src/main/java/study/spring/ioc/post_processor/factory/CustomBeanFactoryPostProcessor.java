@@ -7,10 +7,9 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
-public class Cstm_BeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
-    public Cstm_BeanFactoryPostProcessor() {
+    public CustomBeanFactoryPostProcessor() {
         log.info(">>>>>> 实例化 BeanFactory前处理");
     }
 

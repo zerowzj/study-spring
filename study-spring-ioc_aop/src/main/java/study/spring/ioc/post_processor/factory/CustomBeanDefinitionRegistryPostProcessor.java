@@ -6,13 +6,11 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
-import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
-public class Cstm_BeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
+public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
 
-    public Cstm_BeanDefinitionRegistryPostProcessor() {
+    public CustomBeanDefinitionRegistryPostProcessor() {
         log.info(">>>>>> 实例化 BeanDefinitionRegistryPostProcessor");
     }
 
@@ -36,6 +34,5 @@ public class Cstm_BeanDefinitionRegistryPostProcessor implements BeanDefinitionR
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        log.info(">>>>>> 执行 BeanFactory的postProcessBeanFactory");
     }
 }
