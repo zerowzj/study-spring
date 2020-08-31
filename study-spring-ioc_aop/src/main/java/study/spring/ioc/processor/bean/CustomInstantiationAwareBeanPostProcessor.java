@@ -4,18 +4,21 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
-import org.springframework.stereotype.Component;
-import study.spring.ioc.processor.MyBean;
+import org.springframework.core.Ordered;
 
 /**
  * Bean实例化前后，即Bean的构造函数执行前后
  */
 @Slf4j
-//@Component
-public class Cstm_InstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
 
-    public Cstm_InstantiationAwareBeanPostProcessor() {
-        log.info(">>>>>> 实例化 InstantiationAwareBeanPostProcessor");
+    public CustomInstantiationAwareBeanPostProcessor() {
+        log.info(">>>>>> 实例化InstantiationAwareBeanPostProcessor");
+    }
+
+    @Override
+    public int getOrder() {
+        return 1000;
     }
 
     /**
@@ -25,43 +28,35 @@ public class Cstm_InstantiationAwareBeanPostProcessor implements InstantiationAw
      */
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        if (beanClass == MyBean.class) {
-            log.info(">>>>>> 执行InstantiationAwareBeanPostProcessor的postProcessBeforeInstantiation");
-        }
+        log.info("123213");
         return null;
     }
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        if (bean instanceof MyBean) {
-            log.info(">>>>>> 执行InstantiationAwareBeanPostProcessor的postProcessAfterInstantiation");
-        }
+        log.info("1111");
         return true;
     }
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
+        log.info("21212");
         return null;
     }
 
     /**
-     * =================
-     * 初始化
-     * =================
+     * **************************************
+     * 以下是继承BeanPostProcessor
      */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof MyBean) {
-            log.info("AAAAAAAAAAAAAAA");
-        }
+        log.info(">>>>>>InstantiationAwareBeanPostProcessor 初始化前的后置处理");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof MyBean) {
-            log.info("BBBBBBBBBBBBBBBB");
-        }
+        log.info(">>>>>>InstantiationAwareBeanPostProcessor 初始化后的后置处理");
         return bean;
     }
 }
