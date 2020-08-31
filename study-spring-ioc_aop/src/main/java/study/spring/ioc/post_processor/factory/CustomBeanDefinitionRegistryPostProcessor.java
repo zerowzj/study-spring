@@ -11,7 +11,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
 
     public CustomBeanDefinitionRegistryPostProcessor() {
-        log.info(">>>>>> 实例化 BeanDefinitionRegistryPostProcessor");
+        //log.info(">>>>>> 实例化 BeanDefinitionRegistryPostProcessor");
     }
 
     /**
@@ -19,15 +19,15 @@ public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinition
      */
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        //（★）
-        int bdCount = registry.getBeanDefinitionCount();
-        String[] bdNames = registry.getBeanDefinitionNames();
-        //（★）
-        BeanDefinition bd = registry.getBeanDefinition("");
-        //（★）
-        boolean contain = registry.containsBeanDefinition("");
-        //（★）
-        registry.registerBeanDefinition("", null);
+//        //（★）
+//        int bdCount = registry.getBeanDefinitionCount();
+//        String[] bdNames = registry.getBeanDefinitionNames();
+//        //（★）
+//        BeanDefinition bd = registry.getBeanDefinition("");
+//        //（★）
+//        boolean contain = registry.containsBeanDefinition("");
+//        //（★）
+//        registry.registerBeanDefinition("", null);
 
         log.info(">>>>>> 执行 BeanDefinitionRegistryPostProcessor的postProcessBeanDefinitionRegistry");
     }

@@ -11,7 +11,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Slf4j
-
 @Getter
 @ToString
 @Component
@@ -19,7 +18,7 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
 
     private String name;
 
-    //
+    //初始化和实例化
     static {
         log.info("====== 初始化");
     }
@@ -28,12 +27,13 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
         log.info("====== 实例化");
     }
 
+    //setter依赖注入
     public void setName(String name) {
         log.info("====== set name value");
         this.name = name;
     }
 
-    //
+    //注解
     @PostConstruct
     public void init() {
         log.info("====== @PostConstruct");
@@ -44,7 +44,7 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
         log.info("====== @PreDestroy");
     }
 
-    //
+    //InitializingBean, DisposableBean
     @Override
     public void destroy() throws Exception {
         log.info("====== destroy()");
@@ -55,12 +55,11 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
         log.info("====== afterPropertiesSet()");
     }
 
-    //
+    //init-method和destroy-method
     public void myInit(){
         log.info("====== myInit()");
     }
 
-    //
     public void myDestroy(){
         log.info("====== myDestroy()");
     }
