@@ -24,24 +24,18 @@ public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
     }
 
     public CustomBeanPostProcessor() {
-        log.info(">>>>>> 实例化 BeanPostProcessor");
+        //log.info(">>>>>> 实例化 BeanPostProcessor");
     }
 
-    /**
-     * ******************初始化前的后置处理
-     */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>>BeanPostProcessor 初始化前的后置处理");
+        log.info(">>>>>> BeanPostProcessor初始化前的后置处理");
         return bean;
     }
 
-    /**
-     * 初始化后的后置处理
-     */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>>BeanPostProcessor 初始化后的后置处理");
+        log.info(">>>>>> BeanPostProcessor初始化后的后置处理");
         return bean;
     }
 }

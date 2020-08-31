@@ -13,7 +13,7 @@ import org.springframework.core.Ordered;
 public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
 
     public CustomInstantiationAwareBeanPostProcessor() {
-        log.info(">>>>>> 实例化InstantiationAwareBeanPostProcessor");
+        //log.info(">>>>>> 实例化InstantiationAwareBeanPostProcessor");
     }
 
     @Override
@@ -21,27 +21,22 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
         return 1000;
     }
 
-    /**
-     * =================
-     * 实例化
-     * =================
-     */
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        log.info("123213");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor实例化前的后置处理");
         return null;
     }
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        log.info("1111");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化后的后置处理");
         return true;
     }
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        log.info("21212");
-        return null;
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor的后置处理");
+        return pvs;
     }
 
     /**
@@ -50,13 +45,13 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
      */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>>InstantiationAwareBeanPostProcessor 初始化前的后置处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化前的后置处理");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>>InstantiationAwareBeanPostProcessor 初始化后的后置处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化后的后置处理");
         return bean;
     }
 }

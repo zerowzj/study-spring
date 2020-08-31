@@ -21,48 +21,48 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
 
     //
     static {
-        log.info(">>>>>> 初始化");
+        log.info("====== 初始化");
     }
 
     public MyLifecycleBean() {
-        log.info(">>>>>> 实例化");
+        log.info("====== 实例化");
     }
 
     public void setName(String name) {
-        log.info(">>>>>> set name value");
+        log.info("====== set name value");
         this.name = name;
     }
 
     //
     @PostConstruct
     public void init() {
-        log.info(">>>>>> @PostConstruct");
+        log.info("====== @PostConstruct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        log.info(">>>>>> @PreDestroy");
+        log.info("====== @PreDestroy");
     }
 
     //
     @Override
     public void destroy() throws Exception {
-        log.info(">>>>>> destroy()");
+        log.info("====== destroy()");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        log.info(">>>>>> afterPropertiesSet()");
+        log.info("====== afterPropertiesSet()");
     }
 
     //
     public void myInit(){
-        log.info(">>>>>> myInit()");
+        log.info("====== myInit()");
     }
 
     //
     public void myDestroy(){
-        log.info(">>>>>> myDestroy()");
+        log.info("====== myDestroy()");
     }
 
 }
