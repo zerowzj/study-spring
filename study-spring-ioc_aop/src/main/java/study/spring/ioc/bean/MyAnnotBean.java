@@ -11,7 +11,6 @@ import javax.annotation.PreDestroy;
 @Slf4j
 @Getter
 @ToString
-
 @Component
 public class MyAnnotBean {
 
