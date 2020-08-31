@@ -8,10 +8,10 @@ import study.spring.ioc.bean.MyConfigBean;
 import study.spring.ioc.bean.MyLifecycleBean;
 
 @Slf4j
-public class ProcessorTest {
+public class PostProcessorTest {
 
     @Test
-    public void tesMyConfigBeant() throws Exception {
+    public void test() throws Exception {
         String configLocation = "spring/spring-post_processor.xml";
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
 

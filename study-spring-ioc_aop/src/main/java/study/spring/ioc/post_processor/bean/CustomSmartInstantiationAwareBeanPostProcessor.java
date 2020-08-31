@@ -11,7 +11,7 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
 
     @Override
     public Class<?> predictBeanType(Class<?> beanClass, String beanName) throws BeansException {
-        return null;
+        return beanClass;
     }
 
     @Override
@@ -21,6 +21,6 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
 
     @Override
     public Object getEarlyBeanReference(Object bean, String beanName) throws BeansException {
-        return null;
+        return bean;
     }
 }
