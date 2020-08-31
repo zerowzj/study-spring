@@ -25,7 +25,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化前的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化前的后处理"+ beanName);
         return null;
     }
 
