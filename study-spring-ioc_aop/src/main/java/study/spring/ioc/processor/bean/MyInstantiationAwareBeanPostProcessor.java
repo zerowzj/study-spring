@@ -37,7 +37,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor2 set注入之前的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor2 setter注入之前的后处理");
         Arrays.stream(pvs.getPropertyValues()).forEach(e -> {
             log.info("{}= {}", e.getName(), e.getValue());
         });
