@@ -1,4 +1,4 @@
-package study.spring.ioc.processor.factory;
+package study.spring.ioc.post_processor.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;

@@ -1,4 +1,4 @@
-package study.spring.ioc.processor.bean;
+package study.spring.ioc.post_processor.bean;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -10,11 +10,11 @@ public class CustomDestructionAwareBeanPostProcessor implements DestructionAware
     @Override
     public boolean requiresDestruction(Object bean) {
         log.info(">>>>>> ");
-        return false;
+        return true;
     }
 
     @Override
     public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> ");
+        log.info(">>>>>> DestructionAwareBeanPostProcessor销毁前的后处理");
     }
 }

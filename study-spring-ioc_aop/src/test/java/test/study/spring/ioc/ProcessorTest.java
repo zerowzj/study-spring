@@ -12,7 +12,7 @@ public class ProcessorTest {
 
     @Test
     public void tesMyConfigBeant() throws Exception {
-        String configLocation = "spring/spring-processor.xml";
+        String configLocation = "spring/spring-post_processor.xml";
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
 
         MyLifecycleBean myLifecycleBean = (MyLifecycleBean)ctx.getBean("myLifecycleBean");

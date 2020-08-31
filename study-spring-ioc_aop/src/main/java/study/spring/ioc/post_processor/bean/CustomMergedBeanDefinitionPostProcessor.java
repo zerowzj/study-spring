@@ -1,4 +1,4 @@
-package study.spring.ioc.processor.bean;
+package study.spring.ioc.post_processor.bean;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
@@ -9,11 +9,11 @@ public class CustomMergedBeanDefinitionPostProcessor implements MergedBeanDefini
 
     @Override
     public void postProcessMergedBeanDefinition(RootBeanDefinition beanDefinition, Class<?> beanType, String beanName) {
-        log.info(">>>>>> ");
+        log.info(">>>>>> 合并BeanDefinition的后处理");
     }
 
     @Override
     public void resetBeanDefinition(String beanName) {
-        log.info(">>>>>> ");
+        log.info(">>>>>> resetBeanDefinitionresetBeanDefinitionresetBeanDefinition");
     }
 }
