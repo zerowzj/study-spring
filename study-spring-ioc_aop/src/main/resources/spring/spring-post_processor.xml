@@ -11,13 +11,13 @@
    </bean>
 
    <!-- bean post processor -->
-<!--   <bean class="study.spring.ioc.post_processor.bean.CustomBeanPostProcessor"/>-->
-<!--   <bean class="study.spring.ioc.post_processor.bean.CustomInstantiationAwareBeanPostProcessor"/>-->
+   <bean class="study.spring.ioc.post_processor.bean.CustomBeanPostProcessor"/>
+   <bean class="study.spring.ioc.post_processor.bean.CustomInstantiationAwareBeanPostProcessor"/>
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomDestructionAwareBeanPostProcessor"/>-->
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomMergedBeanDefinitionPostProcessor"/>-->
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomSmartInstantiationAwareBeanPostProcessor"/>-->
 
    <!-- beanfactory post processor -->
-   <bean class="study.spring.ioc.post_processor.factory.CustomBeanFactoryPostProcessor"/>
-   <bean class="study.spring.ioc.post_processor.factory.CustomBeanDefinitionRegistryPostProcessor"/>
+<!--   <bean class="study.spring.ioc.post_processor.factory.CustomBeanFactoryPostProcessor"/>-->
+<!--   <bean class="study.spring.ioc.post_processor.factory.CustomBeanDefinitionRegistryPostProcessor"/>-->
 </beans>

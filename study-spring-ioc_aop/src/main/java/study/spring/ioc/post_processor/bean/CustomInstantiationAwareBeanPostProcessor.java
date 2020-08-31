@@ -25,21 +25,21 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化前的后处理"+ beanName);
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process before instantiation"+ beanName);
         return null;
     }
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor 实例化后的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process after instantiation");
         return true;
     }
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> InstantiationAwareBeanPostProcessor setter注入之前的后处理");
+        log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process before setter");
         Arrays.stream(pvs.getPropertyValues()).forEach(e -> {
-            log.info("{}= {}", e.getName(), e.getValue());
+            log.info("{}= {}", e.getName(), e.getConvertedValue());
         });
         return pvs;
     }

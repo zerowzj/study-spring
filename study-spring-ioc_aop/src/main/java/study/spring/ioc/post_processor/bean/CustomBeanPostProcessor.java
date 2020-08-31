@@ -27,13 +27,13 @@ public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> BeanPostProcessor初始化前的后置处理");
+        log.info(">>>>>> BeanPostProcessor Post-process before initialization");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> BeanPostProcessor初始化后的后置处理");
+        log.info(">>>>>> BeanPostProcessor Post-process after initialization");
         return bean;
     }
 }

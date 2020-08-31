@@ -15,6 +15,6 @@ public class CustomDestructionAwareBeanPostProcessor implements DestructionAware
 
     @Override
     public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
-        log.info(">>>>>> DestructionAwareBeanPostProcessor销毁前的后处理");
+        log.info(">>>>>> DestructionAwareBeanPostProcessor Post-process before destruction");
     }
 }
