@@ -43,19 +43,4 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
         });
         return pvs;
     }
-
-    //************************************
-    // 以下是继承BeanPostProcessor
-    //************************************
-//    @Override
-//    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-//        log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化前的后处理");
-//        return bean;
-//    }
-//
-//    @Override
-//    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-//        log.info(">>>>>> InstantiationAwareBeanPostProcessor初始化后的后处理");
-//        return bean;
-//    }
 }

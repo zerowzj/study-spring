@@ -14,16 +14,4 @@ public class CustomDestructionAwareBeanPostProcessor implements DestructionAware
     public boolean requiresDestruction(Object bean) {
         return false;
     }
-
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        return null;
-    }
-
-
-    @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        return null;
-    }
-
 }
