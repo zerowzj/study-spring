@@ -17,4 +17,13 @@ public class AopConfigTest {
         GreetingService greetingService = (GreetingService) ctx.getBean("greetingService");
         greetingService.sayHi("wangzhj");
     }
+
+    @Test
+    public void test1() {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
+        //
+        GreetingService greetingService = (GreetingService) ctx.getBean("greetingServiceTarget");
+        greetingService.sayHi("wangzhj");
+    }
+
 }
