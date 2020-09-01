@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-   <!-- bean defin -->
+   <!-- （★）bean defin -->
    <bean name="myLifecycleBean"
          class="study.spring.ioc.bean.MyLifecycleBean"
          init-method="myInit"
@@ -10,14 +10,14 @@
       <property name="name" value="wangzhj"/>
    </bean>
 
-   <!-- bean post processor -->
+   <!-- （★）bean post processor -->
    <bean class="study.spring.ioc.post_processor.bean.CustomBeanPostProcessor"/>
    <bean class="study.spring.ioc.post_processor.bean.CustomInstantiationAwareBeanPostProcessor"/>
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomDestructionAwareBeanPostProcessor"/>-->
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomMergedBeanDefinitionPostProcessor"/>-->
 <!--   <bean class="study.spring.ioc.post_processor.bean.CustomSmartInstantiationAwareBeanPostProcessor"/>-->
 
-   <!-- beanfactory post processor -->
+   <!-- （★）beanfactory post processor -->
 <!--   <bean class="study.spring.ioc.post_processor.factory.CustomBeanFactoryPostProcessor"/>-->
 <!--   <bean class="study.spring.ioc.post_processor.factory.CustomBeanDefinitionRegistryPostProcessor"/>-->
 </beans>
