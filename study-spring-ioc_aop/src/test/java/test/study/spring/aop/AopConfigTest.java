@@ -25,5 +25,4 @@ public class AopConfigTest {
         GreetingService greetingService = (GreetingService) ctx.getBean("greetingServiceTarget");
         greetingService.sayHi("wangzhj");
     }
-
 }
