@@ -1,13 +1,10 @@
-package test.study.spring.factory;
+package test.study.spring.ioc.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.springframework.beans.MutablePropertyValues;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import study.spring.ioc.bean.MyConfigBean;
+import study.spring.ioc.bean.ConfigBean;
 
 @Slf4j
 public class BeanDefinitionReaderTest {
@@ -18,7 +15,7 @@ public class BeanDefinitionReaderTest {
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         reader.loadBeanDefinitions("classpath:spring/spring-config.xml");
 
-        MyConfigBean myConfigBean = (MyConfigBean)beanFactory.getBean("myConfigBean");
+        ConfigBean myConfigBean = (ConfigBean)beanFactory.getBean("myConfigBean");
         log.info("{}", myConfigBean);
     }
 }

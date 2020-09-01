@@ -1,10 +1,10 @@
-package test.study.spring.factory;
+package test.study.spring.ioc.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
-import study.spring.ioc.bean.MyConfigBean;
+import study.spring.ioc.bean.ConfigBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +22,7 @@ public class XMLBeanFactoryTest {
 
         //
         TimeUnit.SECONDS.sleep(5);
-        MyConfigBean myBean = (MyConfigBean) beanFactory.getBean("myConfigBean");
+        ConfigBean myBean = (ConfigBean) beanFactory.getBean("myConfigBean");
         log.info("{}", myBean);
     }
 }

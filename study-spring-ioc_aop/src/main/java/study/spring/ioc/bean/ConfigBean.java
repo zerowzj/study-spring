@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Getter
 @ToString
-public class MyConfigBean {
+public class ConfigBean {
 
     private String name;
 
@@ -18,7 +18,7 @@ public class MyConfigBean {
         log.info(">>>>>> 初始化");
     }
 
-    public MyConfigBean() {
+    public ConfigBean() {
         log.info(">>>>>> 实例化");
     }
 

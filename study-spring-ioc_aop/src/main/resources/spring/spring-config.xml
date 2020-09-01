@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
    <!-- （★）IOC Config -->
-   <bean id="myConfigBean" class="study.spring.ioc.bean.MyConfigBean" init-method="init" destroy-method="destroy">
+   <bean id="configBean" class="study.spring.ioc.bean.ConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
    </bean>
 

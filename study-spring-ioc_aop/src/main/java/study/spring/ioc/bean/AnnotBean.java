@@ -12,7 +12,7 @@ import javax.annotation.PreDestroy;
 @Getter
 @ToString
 @Component
-public class MyAnnotBean {
+public class AnnotBean {
 
     private String name;
 
@@ -20,7 +20,7 @@ public class MyAnnotBean {
         log.info(">>>>>> 初始化");
     }
 
-    public MyAnnotBean() {
+    public AnnotBean() {
         log.info(">>>>>> 实例化");
     }
 

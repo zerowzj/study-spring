@@ -1,11 +1,10 @@
-package test.study.spring.factory;
+package test.study.spring.ioc.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.ioc.bean.MyAnnotBean;
-import study.spring.ioc.bean.MyConfigBean;
-import study.spring.ioc.bean.MyLifecycleBean;
+import study.spring.ioc.bean.AnnotBean;
+import study.spring.ioc.bean.LifecycleBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,15 +21,15 @@ public class AnnotationConfigApplicationContextTest {
         //
 //        ctx.scan("study.spring.ioc.bean");
         //
-        ctx.registerBean(MyLifecycleBean.class);
+        ctx.registerBean(LifecycleBean.class);
 
         //需要手动刷新
         ctx.refresh();
         log.info("容器启动完成");
 
         TimeUnit.SECONDS.sleep(5);
-        MyAnnotBean myBean = (MyAnnotBean) ctx.getBean("myAnnotBean");
-        log.info("{}", myBean);
+        AnnotBean annotBean = (AnnotBean) ctx.getBean("myAnnotBean");
+        log.info("{}", annotBean);
 
         ctx.close();
     }

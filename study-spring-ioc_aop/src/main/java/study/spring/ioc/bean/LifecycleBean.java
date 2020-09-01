@@ -14,7 +14,7 @@ import javax.annotation.PreDestroy;
 @Getter
 @ToString
 @Component
-public class MyLifecycleBean implements InitializingBean, DisposableBean {
+public class LifecycleBean implements InitializingBean, DisposableBean {
 
     private String name;
 
@@ -23,7 +23,7 @@ public class MyLifecycleBean implements InitializingBean, DisposableBean {
         log.info("====== 初始化");
     }
 
-    public MyLifecycleBean() {
+    public LifecycleBean() {
         log.info("====== 实例化");
     }
 

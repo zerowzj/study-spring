@@ -2,10 +2,8 @@ package test.study.spring.ioc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean.MyConfigBean;
-import study.spring.ioc.bean.MyLifecycleBean;
+import study.spring.ioc.bean.LifecycleBean;
 
 @Slf4j
 public class PostProcessorTest {
@@ -15,7 +13,7 @@ public class PostProcessorTest {
         String configLocation = "spring/spring-post_processor.xml";
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
 
-        MyLifecycleBean myLifecycleBean = (MyLifecycleBean)ctx.getBean("myLifecycleBean");
+        LifecycleBean myLifecycleBean = (LifecycleBean)ctx.getBean("myLifecycleBean");
         //不显示close不执行destroy-method方法
         ctx.close();
     }

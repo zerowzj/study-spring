@@ -1,4 +1,4 @@
-package test.study.spring.factory;
+package test.study.spring.ioc.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.RootBeanDefinition;
-import study.spring.ioc.bean.MyConfigBean;
+import study.spring.ioc.bean.ConfigBean;
 
 @Slf4j
 public class BeanDefinitionTest {
@@ -31,7 +31,7 @@ public class BeanDefinitionTest {
 
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         beanFactory.registerBeanDefinition("myBean", bd);
-        MyConfigBean myBean = (MyConfigBean) beanFactory.getBean("myBean");
+        ConfigBean myBean = (ConfigBean) beanFactory.getBean("myBean");
         log.info("{}", myBean);
     }
 }

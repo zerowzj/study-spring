@@ -1,9 +1,9 @@
-package test.study.spring.factory;
+package test.study.spring.ioc.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean.MyConfigBean;
+import study.spring.ioc.bean.ConfigBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +18,8 @@ public class ClassPathXmlApplicationContextTest {
         log.info("容器启动完成");
         //
         TimeUnit.SECONDS.sleep(5);
-        MyConfigBean myBean = (MyConfigBean) ctx.getBean("myConfigBean");
-        log.info("{}", myBean);
+        ConfigBean configBean = (ConfigBean) ctx.getBean("configBean");
+        log.info("{}", configBean);
 
         //不显示close不执行destroy-method方法
         ctx.close();
