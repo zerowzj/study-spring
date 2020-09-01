@@ -28,7 +28,7 @@ public class AnnotationConfigApplicationContextTest {
         log.info("容器启动完成");
 
         TimeUnit.SECONDS.sleep(5);
-        AnnotBean annotBean = (AnnotBean) ctx.getBean("myAnnotBean");
+        AnnotBean annotBean = (AnnotBean) ctx.getBean("annotBean");
         log.info("{}", annotBean);
 
         ctx.close();
