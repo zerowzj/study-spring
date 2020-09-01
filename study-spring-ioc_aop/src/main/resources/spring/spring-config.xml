@@ -6,15 +6,29 @@
    <bean id="myConfigBean" class="study.spring.ioc.bean.MyConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
    </bean>
+   <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
 
    <!-- aop -->
-   <bean id="myConfigBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-      <property name="target" ref="myConfigBean"/>
-<!--      <property name="interceptorNames">-->
-<!--         <list>-->
-<!--            <value></value>-->
-<!--            <value></value>-->
-<!--         </list>-->
-<!--      </property>-->
+   <bean id="beforeAdvice" class="study.spring.aop.advice.BeforeAdvice"/>
+   <bean id="afterReturningAdvice" class="study.spring.aop.advice.AfterReturningAd"/>
+   <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="target" ref="greetingServiceTarget"/>
+      <property name="interceptorNames">
+         <list>
+            <value>beforeAdvice</value>
+            <value>afterReturningAdvice</value>
+         </list>
+      </property>
    </bean>
+   <!-- aop by  -->
+   <!--   <aop:config>-->
+   <!--      <aop:pointcut id="MY_POINT_CUT" expression="execution(public * study.spring.aop.*.*(..))"/>-->
+   <!--      <aop:aspect ref="" order="1">-->
+   <!--         <aop:before method="" pointcut-ref="MY_POINT_CUT"/>-->
+   <!--         <aop:after method="" pointcut-ref="MY_POINT_CUT"/>-->
+   <!--         <aop:around method="" pointcut-ref="MY_POINT_CUT"/>-->
+   <!--         <aop:after-throwing method="" pointcut-ref="MY_POINT_CUT"/>-->
+   <!--         <aop:after-returning method="" pointcut-ref="MY_POINT_CUT"/>-->
+   <!--      </aop:aspect>-->
+   <!--   </aop:config>-->
 </beans>

@@ -3,7 +3,7 @@ package test.study.spring.aop;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean.MyConfigBean;
+import study.spring.aop.GreetingService;
 
 @Slf4j
 public class AopConfigTest {
@@ -13,9 +13,8 @@ public class AopConfigTest {
     @Test
     public void test() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
-        log.info("容器启动完成");
         //
-        MyConfigBean myBean = (MyConfigBean) ctx.getBean("myConfigBeanProxy");
-        log.info("{}", myBean);
+        GreetingService greetingService = (GreetingService) ctx.getBean("greetingService");
+        greetingService.sayHi("wangzhj");
     }
 }
