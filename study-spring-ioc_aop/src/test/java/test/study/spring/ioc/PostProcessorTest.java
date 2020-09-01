@@ -9,11 +9,11 @@ import study.spring.ioc.bean.LifecycleBean;
 public class PostProcessorTest {
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         String configLocation = "spring/spring-post_processor.xml";
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
 
-        LifecycleBean myLifecycleBean = (LifecycleBean)ctx.getBean("myLifecycleBean");
+        LifecycleBean lifecycleBean = (LifecycleBean)ctx.getBean("lifecycleBean");
         //不显示close不执行destroy-method方法
         ctx.close();
     }
