@@ -1,20 +1,21 @@
 package study.spring.aop.tag;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aopalliance.intercept.Joinpoint;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 
 @Slf4j
 public class MyAdvice {
 
-    public void before(Joinpoint aaa) {
+    public void before(JoinPoint joinPoint) {
         log.info("before");
     }
 
-    public void after(Joinpoint joinPoint) {
+    public void after(JoinPoint joinPoint) {
         log.info("after");
     }
 
-    public Object around(Joinpoint joinPoint) {
+    public Object around(ProceedingJoinPoint joinPoint) {
         log.info("around");
         Object result = null;
         try {
@@ -25,11 +26,11 @@ public class MyAdvice {
         return result;
     }
 
-    public void afterReturning(Joinpoint joinPoint, Object returnValue) {
+    public void afterReturning(JoinPoint joinPoint, Object retValue) {
         log.info("afterReturning");
     }
 
-    public void afterThrowing(Joinpoint joinPoint, Exception ex) {
+    public void afterThrowing(JoinPoint joinPoint, Exception ex) {
         log.info("afterThrowing");
     }
 }
