@@ -6,7 +6,7 @@ import org.springframework.aop.AfterReturningAdvice;
 import java.lang.reflect.Method;
 
 @Slf4j
-public class AfterReturningAd implements AfterReturningAdvice {
+public class MyAfterReturningAdvice implements AfterReturningAdvice {
 
     @Override
     public void afterReturning(Object returnValue, Method method,

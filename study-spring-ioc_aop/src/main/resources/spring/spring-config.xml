@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
    <!-- ioc -->
    <bean id="myConfigBean" class="study.spring.ioc.bean.MyConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
    </bean>
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
 
-   <!-- aop -->
-   <bean id="beforeAdvice" class="study.spring.aop.advice.BeforeAdvice"/>
-   <bean id="afterReturningAdvice" class="study.spring.aop.advice.AfterReturningAd"/>
+   <!-- aop config by proxy -->
+   <!-- advice -->
+   <bean id="myBeforeAdvice" class="study.spring.aop.advice.MyBeforeAdvice"/>
+   <bean id="myAfterReturningAdvice" class="study.spring.aop.advice.MyAfterReturningAdvice"/>
+   <bean id="myMethodInterceptor" class="study.spring.aop.advice.MyMethodInterceptor"/>
+   <!-- proxy -->
    <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
       <property name="target" ref="greetingServiceTarget"/>
       <property name="interceptorNames">
          <list>
-            <value>beforeAdvice</value>
-            <value>afterReturningAdvice</value>
+            <value>myBeforeAdvice</value>
+            <value>myAfterReturningAdvice</value>
+            <value>myMethodInterceptor</value>
          </list>
       </property>
    </bean>
-   <!-- aop by  -->
-   <!--   <aop:config>-->
-   <!--      <aop:pointcut id="MY_POINT_CUT" expression="execution(public * study.spring.aop.*.*(..))"/>-->
-   <!--      <aop:aspect ref="" order="1">-->
-   <!--         <aop:before method="" pointcut-ref="MY_POINT_CUT"/>-->
-   <!--         <aop:after method="" pointcut-ref="MY_POINT_CUT"/>-->
-   <!--         <aop:around method="" pointcut-ref="MY_POINT_CUT"/>-->
-   <!--         <aop:after-throwing method="" pointcut-ref="MY_POINT_CUT"/>-->
-   <!--         <aop:after-returning method="" pointcut-ref="MY_POINT_CUT"/>-->
-   <!--      </aop:aspect>-->
-   <!--   </aop:config>-->
+   <!-- aop config by tag -->
+   <!-- advice -->
+   <bean id="MyAdvice" class="study.spring.aop.tag.MyAdvice"/>
+   <aop:config>
+      <aop:pointcut id="MY_POINT_CUT" expression="execution(public * study.spring.aop.*.*(..))"/>
+      <aop:aspect ref="MyAdvice" order="1">
+         <aop:before method="before" pointcut-ref="MY_POINT_CUT"/>
+         <aop:after method="after" pointcut-ref="MY_POINT_CUT"/>
+         <aop:around method="around" pointcut-ref="MY_POINT_CUT"/>
+         <aop:after-throwing method="afterThrowing" pointcut-ref="MY_POINT_CUT"/>
+         <aop:after-returning method="afterReturning" pointcut-ref="MY_POINT_CUT"/>
+      </aop:aspect>
+   </aop:config>
 </beans>
