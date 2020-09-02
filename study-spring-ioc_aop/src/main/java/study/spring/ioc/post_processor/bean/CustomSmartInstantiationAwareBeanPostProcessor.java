@@ -14,7 +14,7 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
      */
     @Override
     public Class<?> predictBeanType(Class<?> beanClass, String beanName) throws BeansException {
-        log.info(">>>>>> SmartInstantiationAwareBeanPostProcessor predictBeanType");
+        log.info(">>>>>> SmartInstantiationAwareBeanPostProcessor predictBeanType=="+ beanClass.getName());
         return beanClass;
     }
 
