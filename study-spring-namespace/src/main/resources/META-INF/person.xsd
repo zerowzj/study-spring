@@ -5,9 +5,9 @@
 			targetNamespace="http://www.springframework.org/schema/person"
 			elementFormDefault="qualified"
 			attributeFormDefault="unqualified">
-	<!-- 引入 -->
+	<!-- import spring beans -->
 	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
-	<!-- 引入 -->
+	<!-- define  -->
 	<xsd:element name="person">
 		<xsd:complexType>
 			<xsd:complexContent>

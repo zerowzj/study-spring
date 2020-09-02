@@ -6,7 +6,7 @@ import org.springframework.util.StringUtils;
 import org.w3c.dom.Element;
 import study.spring.namespace.Person;
 
-public class PersonBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
+public class PersonV2BeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
 
     @Override
     protected Class<?> getBeanClass(Element element) {

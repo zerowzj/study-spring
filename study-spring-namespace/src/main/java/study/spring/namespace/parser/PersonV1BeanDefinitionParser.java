@@ -9,7 +9,7 @@ import org.springframework.beans.factory.xml.XmlReaderContext;
 import org.w3c.dom.Element;
 import study.spring.namespace.Person;
 
-public class DemoBeanDefinitionParser implements BeanDefinitionParser {
+public class PersonV1BeanDefinitionParser implements BeanDefinitionParser {
 
     @Override
     public BeanDefinition parse(Element element, ParserContext context) {
@@ -19,15 +19,15 @@ public class DemoBeanDefinitionParser implements BeanDefinitionParser {
         XmlReaderContext readerContext = context.getReaderContext();
         
         //定义Bean
-        RootBeanDefinition rbd = new RootBeanDefinition(Person.class);
-        rbd.setSource(source);
-        rbd.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
-        rbd.getPropertyValues().add("id", "cutesource");
-        rbd.getPropertyValues().add("name", "fdasfads");
-        rbd.getPropertyValues().add("age", "100");
+        RootBeanDefinition bd = new RootBeanDefinition(Person.class);
+        bd.setSource(source);
+        bd.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
+        bd.getPropertyValues().add("id", "cutesource11111111111");
+        bd.getPropertyValues().add("name", "fdasfads");
+        bd.getPropertyValues().add("age", "100");
         //注册Bean
         BeanDefinitionRegistry registry = readerContext.getRegistry();
-        registry.registerBeanDefinition("cutesource", rbd);
+        registry.registerBeanDefinition("cutesource", bd);
 
 //        context.registerComponent(new BeanComponentDefinition(handlerMappingDef, ""));
 //        context.popAndRegisterContainingComponent();
