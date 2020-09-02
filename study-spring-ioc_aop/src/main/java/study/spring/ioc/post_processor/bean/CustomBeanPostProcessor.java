@@ -11,7 +11,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public int getOrder() {
-        return 1000;
+        return 3;
     }
 
     public CustomBeanPostProcessor() {

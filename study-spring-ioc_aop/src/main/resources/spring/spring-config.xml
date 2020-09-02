@@ -4,12 +4,12 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-   <!-- （★）IOC Config -->
+   <!-- （★）ioc config -->
    <bean id="configBean" class="study.spring.ioc.bean.ConfigBean" init-method="init" destroy-method="destroy">
       <property name="name" value="wangzhj"/>
    </bean>
 
-   <!-- （★）AOP Config By Proxy -->
+   <!-- （★）aop config by proxy -->
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice -->
    <bean id="myBeforeAdvice" class="study.spring.aop.advice.MyBeforeAdvice"/>
@@ -26,7 +26,7 @@
          </list>
       </property>
    </bean>
-   <!-- （★）AOP Config By Tag -->
+   <!-- （★）aop config by tag -->
    <!-- advice config -->
    <bean id="myAdvice" class="study.spring.aop.tag.MyAdvice"/>
    <aop:config>

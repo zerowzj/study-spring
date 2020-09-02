@@ -3,11 +3,22 @@ package study.spring.ioc.post_processor.bean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;
+import org.springframework.core.Ordered;
 
 import java.lang.reflect.Constructor;
 
 @Slf4j
-public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor {
+public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor, Ordered {
+
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        return null;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        return null;
+    }
 
     /**
      * 预测Bean的类型，返回第一个预测成功的Class类型，如果不能预测返回null

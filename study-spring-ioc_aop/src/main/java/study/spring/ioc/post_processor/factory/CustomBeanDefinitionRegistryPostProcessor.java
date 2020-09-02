@@ -6,9 +6,16 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
+import org.springframework.core.Ordered;
 
 @Slf4j
-public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
+public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor, Ordered {
+
+
+    @Override
+    public int getOrder() {
+        return 2;
+    }
 
     public CustomBeanDefinitionRegistryPostProcessor() {
         //log.info(">>>>>> 实例化 BeanDefinitionRegistryPostProcessor");
@@ -29,10 +36,11 @@ public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinition
 //        //（★）
 //        registry.registerBeanDefinition("", null);
 
-        log.info(">>>>>> 执行 BeanDefinitionRegistryPostProcessor的postProcessBeanDefinitionRegistry");
+//        log.info(">>>>>> BeanDefinitionRegistryPostProcessor Post-process BeanDefinitionRegistry");
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        log.info(">>>>>> BeanDefinitionRegistryPostProcessor Post-process BeanFactory");
     }
 }
