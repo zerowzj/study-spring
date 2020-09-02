@@ -17,14 +17,21 @@ public class PersonV1BeanDefinitionParser implements BeanDefinitionParser {
         Object source = context.extractSource(element);
         //
         XmlReaderContext readerContext = context.getReaderContext();
-        
+
         //定义Bean
-        RootBeanDefinition bd = new RootBeanDefinition(Person.class);
-        bd.setSource(source);
+        RootBeanDefinition bd = new RootBeanDefinition();
+        bd.setBeanClass(Person.class);
         bd.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
-        bd.getPropertyValues().add("id", "cutesource11111111111");
-        bd.getPropertyValues().add("name", "fdasfads");
-        bd.getPropertyValues().add("age", "100");
+        if(element.hasAttribute("id")){
+            bd.getPropertyValues().add("id", element.getAttribute("id"));
+        }
+        if(element.hasAttribute("name")){
+            bd.getPropertyValues().add("name", element.getAttribute("name"));
+        }
+        if(element.hasAttribute("age")){
+            bd.getPropertyValues().add("age", element.getAttribute("age"));
+        }
+
         //注册Bean
         BeanDefinitionRegistry registry = readerContext.getRegistry();
         registry.registerBeanDefinition("cutesource", bd);
