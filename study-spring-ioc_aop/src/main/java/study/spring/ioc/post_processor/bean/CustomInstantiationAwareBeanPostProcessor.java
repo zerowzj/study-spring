@@ -8,9 +8,6 @@ import org.springframework.core.Ordered;
 
 import java.util.Arrays;
 
-/**
- * Bean实例化前后，即Bean的构造函数执行前后
- */
 @Slf4j
 public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
 

@@ -9,7 +9,7 @@ public class CustomDestructionAwareBeanPostProcessor implements DestructionAware
 
     @Override
     public boolean requiresDestruction(Object bean) {
-        log.info(">>>>>> ");
+        //log.info(">>>>>> ");
         return true;
     }
 

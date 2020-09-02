@@ -9,11 +9,11 @@ public class CustomMergedBeanDefinitionPostProcessor implements MergedBeanDefini
 
     @Override
     public void postProcessMergedBeanDefinition(RootBeanDefinition beanDefinition, Class<?> beanType, String beanName) {
-        log.info(">>>>>> 合并BeanDefinition的后处理");
+        log.info(">>>>>> CustomMergedBeanDefinitionPostProcessor Post-processor after instance");
     }
 
     @Override
     public void resetBeanDefinition(String beanName) {
-        log.info(">>>>>> resetBeanDefinitionresetBeanDefinitionresetBeanDefinition");
+        log.info(">>>>>> CustomMergedBeanDefinitionPostProcessor");
     }
 }

@@ -11,16 +11,19 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
 
     @Override
     public Class<?> predictBeanType(Class<?> beanClass, String beanName) throws BeansException {
+        log.info(">>>>>> SmartInstantiationAwareBeanPostProcessor predictBeanType");
         return beanClass;
     }
 
     @Override
     public Constructor<?>[] determineCandidateConstructors(Class<?> beanClass, String beanName) throws BeansException {
-        return new Constructor[0];
+        log.info(">>>>>> SmartInstantiationAwareBeanPostProcessor determineCandidateConstructors");
+        return null;
     }
 
     @Override
     public Object getEarlyBeanReference(Object bean, String beanName) throws BeansException {
+        log.info(">>>>>> SmartInstantiationAwareBeanPostProcessor getEarlyBeanReference");
         return bean;
     }
 }

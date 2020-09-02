@@ -6,14 +6,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
-/**
- * 该处初始化指以下方法
- * （1）@PostConstruct注解的方法
- * （2）实现InitializingBean的
- * （3）init-method指定的方法
- */
 @Slf4j
-@Component
 public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override

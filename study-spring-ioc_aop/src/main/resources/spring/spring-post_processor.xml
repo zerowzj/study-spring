@@ -2,8 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-   <!-- （★）bean defin -->
-   <bean name="myLifecycleBean"
+   <!-- （★）bean definition -->
+   <bean name="lifecycleBean"
          class="study.spring.ioc.bean.LifecycleBean"
          init-method="myInit"
          destroy-method="myDestroy">
@@ -13,9 +13,9 @@
    <!-- （★）bean post processor -->
    <bean class="study.spring.ioc.post_processor.bean.CustomBeanPostProcessor"/>
    <bean class="study.spring.ioc.post_processor.bean.CustomInstantiationAwareBeanPostProcessor"/>
-<!--   <bean class="study.spring.ioc.post_processor.bean.CustomDestructionAwareBeanPostProcessor"/>-->
-<!--   <bean class="study.spring.ioc.post_processor.bean.CustomMergedBeanDefinitionPostProcessor"/>-->
-<!--   <bean class="study.spring.ioc.post_processor.bean.CustomSmartInstantiationAwareBeanPostProcessor"/>-->
+   <bean class="study.spring.ioc.post_processor.bean.CustomDestructionAwareBeanPostProcessor"/>
+   <bean class="study.spring.ioc.post_processor.bean.CustomMergedBeanDefinitionPostProcessor"/>
+   <bean class="study.spring.ioc.post_processor.bean.CustomSmartInstantiationAwareBeanPostProcessor"/>
 
    <!-- （★）beanfactory post processor -->
 <!--   <bean class="study.spring.ioc.post_processor.factory.CustomBeanFactoryPostProcessor"/>-->
