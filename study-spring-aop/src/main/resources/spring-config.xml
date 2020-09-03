@@ -4,7 +4,6 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-
    <!-- （★）aop config by proxy -->
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice -->
@@ -22,8 +21,11 @@
          </list>
       </property>
    </bean>
+   <!-- auto proxy -->
+<!--   <bean class="" />-->
+
    <!-- （★）aop config by tag -->
-   <!-- advice config -->
+   <!-- advice bean -->
    <bean id="myAdvice" class="study.spring.aop.tag.MyAdvice"/>
    <aop:config>
       <!-- order: pointcut ==> advisor ==> aspect -->

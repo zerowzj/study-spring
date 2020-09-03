@@ -2,7 +2,6 @@ package test.study.spring.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.springframework.aop.Advisor;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.NameMatchMethodPointcutAdvisor;
 import study.spring.aop.GreetingService;
