@@ -22,7 +22,8 @@
       </property>
    </bean>
    <!-- auto proxy -->
-<!--   <bean class="" />-->
+   <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+   </bean>
 
    <!-- （★）aop config by tag -->
    <!-- advice bean -->
@@ -31,7 +32,7 @@
       <!-- order: pointcut ==> advisor ==> aspect -->
       <aop:pointcut expression="execution(public * study.spring.aop.*Service.*(..))" id="myPointCut"/>
       <!-- advisor config -->
-<!--      <aop:advisor advice-ref="myAfterReturningAdvice" pointcut-ref="myPointCut"/>-->
+      <!--      <aop:advisor advice-ref="myAfterReturningAdvice" pointcut-ref="myPointCut"/>-->
       <!-- aspect config-->
       <aop:aspect ref="myAdvice" order="1">
          <aop:before pointcut-ref="myPointCut" method="before" arg-names="joinPoint"/>
