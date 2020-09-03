@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>study.spring</groupId>
-    <artifactId>study-spring-ioc_aop</artifactId>
+    <artifactId>study-spring-aop</artifactId>
     <version>1.0</version>
 
 
