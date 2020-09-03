@@ -10,6 +10,12 @@ import java.lang.reflect.Constructor;
 @Slf4j
 public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor, Ordered {
 
+
+    @Override
+    public int getOrder() {
+        return 1;
+    }
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         return null;
