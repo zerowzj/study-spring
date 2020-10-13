@@ -1,4 +1,4 @@
-package study.springboot.condition.conditionalon.bean;
+package study.springboot.condition.conditional_on.bean;
 
 import lombok.Getter;
 import lombok.Setter;

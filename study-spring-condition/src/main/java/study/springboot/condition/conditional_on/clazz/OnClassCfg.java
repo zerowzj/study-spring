@@ -1,10 +1,10 @@
-package study.springboot.condition.conditionalon.clazz;
+package study.springboot.condition.conditional_on.clazz;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import study.springboot.condition.conditionalon.bean.City;
-import study.springboot.condition.conditionalon.bean.People;
+import study.springboot.condition.conditional_on.bean.City;
+import study.springboot.condition.conditional_on.bean.People;
 
 @Configuration
 public class OnClassCfg {

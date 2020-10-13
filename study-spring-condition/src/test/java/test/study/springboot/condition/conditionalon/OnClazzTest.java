@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringRunner;
-import study.springboot.condition.conditionalon.bean.People;
+import study.springboot.condition.conditional_on.bean.People;
 
 @Slf4j
 @RunWith(SpringRunner.class)

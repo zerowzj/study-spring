@@ -1,4 +1,4 @@
-package study.springboot.condition.conditionalon.expression;
+package study.springboot.condition.conditional_on.expression;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;

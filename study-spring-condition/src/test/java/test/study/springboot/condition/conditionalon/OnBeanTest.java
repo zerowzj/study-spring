@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import study.springboot.condition.conditionalon.bean.People;
+import study.springboot.condition.conditional_on.bean.People;
 
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = OnBeanTest.class)
 
-@SpringBootApplication(scanBasePackages = "study.springboot.condition.conditionalon.bean")
+@SpringBootApplication(scanBasePackages = "study.springboot.condition.conditional_on.bean")
 public class OnBeanTest {
 
     @Autowired(required = false)

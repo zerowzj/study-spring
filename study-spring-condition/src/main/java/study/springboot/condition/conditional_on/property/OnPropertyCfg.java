@@ -1,4 +1,4 @@
-package study.springboot.condition.conditionalon.property;
+package study.springboot.condition.conditional_on.property;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

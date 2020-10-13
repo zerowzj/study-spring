@@ -1,4 +1,4 @@
-package study.springboot.condition.conditionalon.tt.and;
+package study.springboot.condition.conditional_on.tt.and;
 
 import org.springframework.context.annotation.Configuration;
 

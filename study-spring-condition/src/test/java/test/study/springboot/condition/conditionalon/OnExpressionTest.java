@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringRunner;
-import study.springboot.condition.conditionalon.expression.Animal;
+import study.springboot.condition.conditional_on.expression.Animal;
 
 import java.util.List;
 
