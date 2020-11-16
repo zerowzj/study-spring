@@ -2,8 +2,8 @@ package test.study.spring.enable;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.enable.improt.CustomBean;
-import study.spring.enable.improt.ImportCfg;
+import study.spring.enable.impot.CustomBean;
+import study.spring.enable.impot.ImportCfg;
 
 public class ImportTest {
 

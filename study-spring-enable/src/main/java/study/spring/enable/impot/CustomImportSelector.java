@@ -1,4 +1,4 @@
-package study.spring.enable.improt;
+package study.spring.enable.impot;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.ImportSelector;
