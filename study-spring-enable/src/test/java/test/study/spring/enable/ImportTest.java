@@ -2,8 +2,8 @@ package test.study.spring.enable;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.enable.impot.Cstm_Bean;
-import study.spring.enable.impot.ImportCfg;
+import study.spring.enable.improt.CustomBean;
+import study.spring.enable.improt.ImportCfg;
 
 public class ImportTest {
 
@@ -13,7 +13,7 @@ public class ImportTest {
         context.register(ImportCfg.class);
         context.refresh();
 
-        Cstm_Bean bean = context.getBean(Cstm_Bean.class);
+        CustomBean bean = context.getBean(CustomBean.class);
         bean.sayHi();
     }
 }

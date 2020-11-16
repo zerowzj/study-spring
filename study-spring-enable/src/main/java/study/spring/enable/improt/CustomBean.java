@@ -1,15 +1,15 @@
-package study.spring.enable.impot;
+package study.spring.enable.improt;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class Cstm_Bean {
+public class CustomBean {
 
     static {
         log.info(">>>>>> 初始化 ImportBean");
     }
 
-    public Cstm_Bean() {
+    public CustomBean() {
         log.info(">>>>>> 实例化 ImportBean");
     }
 

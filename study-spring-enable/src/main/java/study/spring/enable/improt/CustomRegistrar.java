@@ -1,14 +1,12 @@
-package study.spring.enable.impot;
+package study.spring.enable.improt;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
 @Slf4j
-public class Cstm_ImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class CustomRegistrar implements ImportBeanDefinitionRegistrar {
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata,

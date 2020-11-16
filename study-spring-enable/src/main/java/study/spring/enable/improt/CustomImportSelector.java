@@ -1,11 +1,11 @@
-package study.spring.enable.impot;
+package study.spring.enable.improt;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 
 @Slf4j
-public class Cstm_ImportSelector implements ImportSelector {
+public class CustomImportSelector implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata metadata) {
