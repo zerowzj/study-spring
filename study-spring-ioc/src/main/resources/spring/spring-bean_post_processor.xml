@@ -2,14 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-   <!-- （★）bean definition -->
+   <!-- bean definition -->
    <bean id="lifecycleBean" class="study.spring.ioc.bean_factory.xml.XmlBean"
          init-method="myInit"
          destroy-method="myDestroy">
       <property name="name" value="wangzhj"/>
    </bean>
 
-   <!-- （★）bean post processor -->
+   <!-- bean post processor -->
    <bean class="study.spring.ioc.bean_post_processor.CustomBeanPostProcessor"/>
    <bean class="study.spring.ioc.bean_post_processor.CustomInstantiationAwareBeanPostProcessor"/>
 <!--      <bean class="study.spring.ioc.bean_post_processor.CustomDestructionAwareBeanPostProcessor"/>-->
