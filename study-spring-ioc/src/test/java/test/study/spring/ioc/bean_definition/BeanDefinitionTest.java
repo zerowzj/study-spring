@@ -2,7 +2,6 @@ package test.study.spring.ioc.bean_definition;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
@@ -18,7 +17,6 @@ public class BeanDefinitionTest {
     public void constructor_test() {
         //bd定义
         AbstractBeanDefinition bd = new RootBeanDefinition();
-
         //类型
         bd.setBeanClass(MyBean.class);
         //bd.setBeanClassName("study.spring.ioc.bean_defin.MyConfigBean");
@@ -37,7 +35,6 @@ public class BeanDefinitionTest {
     public void set_test(){
         BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(MyBean.class);
         builder.addPropertyValue("name", "haha");
-
         BeanDefinition bd = builder.getBeanDefinition();
 
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
