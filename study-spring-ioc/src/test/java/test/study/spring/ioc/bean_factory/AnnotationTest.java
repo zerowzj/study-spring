@@ -5,9 +5,6 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.ioc.bean_factory.annotation.AnnotationBean;
-import study.spring.ioc.bean_factory.xml.XmlBean;
-
-import java.util.concurrent.TimeUnit;
 
 @Slf4j
 //@ComponentScan("study.spring.ioc.bean_factory.annotation")
@@ -28,8 +25,9 @@ public class AnnotationTest {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         //（1）结合注解@ComponentScan使用
         //ctx.register(AnnotationTest.class);
-        //（2）
+        //（2）扫描包
         ctx.scan("study.spring.ioc.bean_factory.annotation");
+
         //需要手动刷新
         ctx.refresh();
 
