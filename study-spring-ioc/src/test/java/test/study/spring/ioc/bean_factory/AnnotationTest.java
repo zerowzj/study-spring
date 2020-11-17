@@ -16,7 +16,7 @@ public class AnnotationTest {
     String CONFIG_LOCATION = "spring/spring-annotation.xml";
 
     @Test
-    public void xml_test() throws Exception {
+    public void xml_test() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
         AnnotationBean annotBean = ctx.getBean(AnnotationBean.class);
         log.info("{}", annotBean);
@@ -24,24 +24,17 @@ public class AnnotationTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void annotation_test() {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-
-        //结合注解@ComponentScan使用
-//        ctx.register(AnnotationConfigApplicationContextTest.class);
-        //
-//        ctx.scan("study.spring.ioc.bean");
-        //
-        ctx.registerBean(XmlBean.class);
-
+        //（1）结合注解@ComponentScan使用
+        //ctx.register(AnnotationTest.class);
+        //（2）
+        ctx.scan("study.spring.ioc.bean_factory.annotation");
         //需要手动刷新
         ctx.refresh();
-        log.info("容器启动完成");
 
-        TimeUnit.SECONDS.sleep(5);
-        AnnotationBean annotBean = (AnnotationBean) ctx.getBean("annotBean");
+        AnnotationBean annotBean = ctx.getBean(AnnotationBean.class);
         log.info("{}", annotBean);
-
         ctx.close();
     }
 }

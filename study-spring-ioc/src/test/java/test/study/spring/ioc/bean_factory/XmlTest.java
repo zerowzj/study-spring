@@ -3,7 +3,7 @@ package test.study.spring.ioc.bean_factory;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean.ConfigBean;
+import study.spring.ioc.bean_factory.xml.XmlBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +18,8 @@ public class XmlTest {
         log.info("容器启动完成");
         //
         TimeUnit.SECONDS.sleep(5);
-        ConfigBean configBean = (ConfigBean) ctx.getBean("configBean");
-        log.info("{}", configBean);
+        XmlBean xmlBean = (XmlBean) ctx.getBean("xmlBean");
+        log.info("{}", xmlBean);
 
         //不显示close不执行destroy-method方法
         ctx.close();
