@@ -5,7 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Import;
 import study.spring.enable.impot.ImportBean;
 import study.spring.enable.impot.registrar.CustomRegistrar;
-import study.spring.enable.impot.selector.CustomImportSelector;
 
 @Import(CustomRegistrar.class)
 public class RegistrarTest {

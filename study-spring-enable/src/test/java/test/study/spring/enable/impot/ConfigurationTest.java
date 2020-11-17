@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Import;
 import study.spring.enable.impot.ImportBean;
 import study.spring.enable.impot.configuration.CustomConfigurationBean;
 
-
 @Import(CustomConfigurationBean.class)
 public class ConfigurationTest {
 

@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Import;
 import study.spring.enable.impot.ImportBean;
 import study.spring.enable.impot.selector.CustomImportSelector;
 
-
 @Import(CustomImportSelector.class)
 public class SelectorTest {
 
