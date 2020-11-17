@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.InstantiationAwareBeanPostProces
 import org.springframework.core.Ordered;
 
 /**
- * 实例化 Bean 后处理
+ * 实例化 Bean后处理
  */
 @Slf4j
 public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
