@@ -10,7 +10,7 @@ import study.spring.ioc.bean_factory.xml.XmlBean;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-//@ComponentScan("study.spring.ioc.bean")
+//@ComponentScan("study.spring.ioc.bean_factory.annotation")
 public class AnnotationTest {
 
     String CONFIG_LOCATION = "spring/spring-annotation.xml";
