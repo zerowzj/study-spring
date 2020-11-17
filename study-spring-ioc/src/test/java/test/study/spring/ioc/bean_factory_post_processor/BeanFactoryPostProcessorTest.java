@@ -14,7 +14,7 @@ public class BeanFactoryPostProcessorTest {
     public void test() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
-        XmlBean lifecycleBean = (XmlBean) ctx.getBean("lifecycleBean");
+        XmlBean xmlBean = (XmlBean) ctx.getBean("xmlBean");
         //不显示close不执行destroy-method方法
         ctx.close();
     }

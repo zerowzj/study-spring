@@ -14,7 +14,7 @@ public class FactoryBeanTest {
     public void test() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
-        XmlBean lifecycleBean = (XmlBean) ctx.getBean(XmlBean.class);
+        XmlBean xmlBean = (XmlBean) ctx.getBean(XmlBean.class);
         //不显示close不执行destroy-method方法
         ctx.close();
     }
