@@ -3,13 +3,13 @@ package study.spring.enable.impot;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CustomBean {
+public class ImportBean {
 
     static {
         log.info(">>>>>> 初始化 ImportBean");
     }
 
-    public CustomBean() {
+    public ImportBean() {
         log.info(">>>>>> 实例化 ImportBean");
     }
 

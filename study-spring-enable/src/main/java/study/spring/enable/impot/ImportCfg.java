@@ -3,7 +3,7 @@ package study.spring.enable.impot;
 import org.springframework.context.annotation.Import;
 
 @Import({
-        CustomBean.class,
+        ImportBean.class,
 //        CustomCfgBean.class,
 //        CustomImportSelector.class,
 //        CustomRegistrar.class,

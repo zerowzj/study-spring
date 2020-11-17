@@ -2,7 +2,7 @@ package test.study.spring.enable;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.enable.impot.CustomBean;
+import study.spring.enable.impot.ImportBean;
 import study.spring.enable.impot.ImportCfg;
 
 public class ImportTest {
@@ -13,7 +13,7 @@ public class ImportTest {
         context.register(ImportCfg.class);
         context.refresh();
 
-        CustomBean bean = context.getBean(CustomBean.class);
+        ImportBean bean = context.getBean(ImportBean.class);
         bean.sayHi();
     }
 }
