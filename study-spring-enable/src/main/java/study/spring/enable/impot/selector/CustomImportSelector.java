@@ -11,10 +11,13 @@ public class CustomImportSelector implements ImportSelector {
     @Override
     public String[] selectImports(AnnotationMetadata metadata) {
         log.info(">>>>>> ImportSelector");
+        //要注册为 bd 的类全限定
+        String[] classNames = new String[]{ImportBean.class.getName()};
         metadata.getAnnotationTypes()
                 .forEach(e -> {
                     log.info("{}", e);
                 });
-        return new String[]{ImportBean.class.getName()};
+
+        return classNames;
     }
 }

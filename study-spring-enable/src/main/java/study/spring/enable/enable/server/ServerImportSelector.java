@@ -1,30 +1,38 @@
 package study.spring.enable.enable.server;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
-import study.spring.enable.enable.server.EnableServer;
-import study.spring.enable.enable.server.FtpServer;
-import study.spring.enable.enable.server.HttpServer;
-import study.spring.enable.enable.server.Server;
 
-
+import java.util.Arrays;
 import java.util.Map;
 
+@Slf4j
 public class ServerImportSelector implements ImportSelector {
 
     @Override
-    public String[] selectImports(AnnotationMetadata annotationMetadata) {
-        Map<String, Object> attr = annotationMetadata.getAnnotationAttributes(EnableServer.class.getName());
+    public String[] selectImports(AnnotationMetadata metadata) {
+        //
+        Map<String, Object> attr = metadata.getAnnotationAttributes(EnableServer.class.getName());
+        metadata.getAnnotationTypes()
+                .forEach(e -> {
+                    log.info("{}", e);
+                });
+        //
         Server.Type type = (Server.Type) attr.get("type");
-        String[] importClassNames = new String[0];
+        //
+        String[] classNames = new String[0];
         switch (type) {
             case HTTP:
-                importClassNames = new String[]{HttpServer.class.getName()};
+                classNames = new String[]{HttpServer.class.getName()};
                 break;
             case FTP:
-                importClassNames = new String[]{FtpServer.class.getName()};
+                classNames = new String[]{FtpServer.class.getName()};
                 break;
         }
-        return importClassNames;
+        Arrays.stream(classNames).forEach(e -> {
+            log.info(e);
+        });
+        return classNames;
     }
 }

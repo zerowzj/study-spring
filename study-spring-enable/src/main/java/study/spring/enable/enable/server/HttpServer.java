@@ -9,9 +9,4 @@ public class HttpServer implements Server {
     public void start() {
         log.info("HTTP server starting...");
     }
-
-    @Override
-    public void stop() {
-        log.info("HTTP server stopping...");
-    }
 }

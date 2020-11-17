@@ -6,14 +6,11 @@ import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.core.Ordered;
 
-import java.util.Arrays;
-
+/**
+ * 实例化 Bean 后处理
+ */
 @Slf4j
 public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, Ordered {
-
-    public CustomInstantiationAwareBeanPostProcessor() {
-        //log.info(">>>>>> 实例化InstantiationAwareBeanPostProcessor");
-    }
 
     @Override
     public int getOrder() {
@@ -22,35 +19,34 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        //log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process before instantiation"+ beanName);
+        log.info(">>>>>> postProcessBeforeInstantiation");
         return null;
     }
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        //log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process after instantiation");
+        log.info(">>>>>> postProcessAfterInstantiation");
         return true;
     }
 
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        //log.info(">>>>>> InstantiationAwareBeanPostProcessor Post-process before setter");
-        Arrays.stream(pvs.getPropertyValues()).forEach(e -> {
-            log.info("{}= {}", e.getName(), e.getConvertedValue());
-        });
+        log.info(">>>>>> postProcessProperties");
+//        Arrays.stream(pvs.getPropertyValues()).forEach(e -> {
+//            log.info("{}= {}", e.getName(), e.getConvertedValue());
+//        });
         return pvs;
     }
 
-
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info("fsdafasdf");
+        log.info(">>>>>> postProcessBeforeInitialization");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info("fsdafasdf");
+        log.info(">>>>>> postProcessAfterInitialization");
         return bean;
     }
 }

@@ -11,7 +11,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 
 @Import(ServerImportSelector.class)
-//@Import(ServerImportBeanDefinitionRegistrar.class)
 public @interface EnableServer {
 
     Server.Type type();

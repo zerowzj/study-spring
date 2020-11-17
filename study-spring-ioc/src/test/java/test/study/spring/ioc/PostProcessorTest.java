@@ -10,7 +10,7 @@ public class PostProcessorTest {
 
     @Test
     public void test() {
-        String configLocation = "spring/spring-post_processor.xml";
+        String configLocation = "spring/spring-bean_factory_post_processor.xml";
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(configLocation);
 
         LifecycleBean lifecycleBean = (LifecycleBean)ctx.getBean("lifecycleBean");

@@ -5,6 +5,9 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
 import org.springframework.core.Ordered;
 
+/**
+ * 实例化 Bean 后处理
+ */
 @Slf4j
 public class CustomDestructionAwareBeanPostProcessor implements DestructionAwareBeanPostProcessor, Ordered {
 
@@ -21,20 +24,20 @@ public class CustomDestructionAwareBeanPostProcessor implements DestructionAware
 
     @Override
     public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
-        //log.info(">>>>>> DestructionAwareBeanPostProcessor Post-process before destruction");
+        log.info(">>>>>> postProcessBeforeDestruction");
     }
 
 
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info("fsdafasdf");
+        log.info(">>>>>> postProcessBeforeInitialization");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info("fsdafasdf");
+        log.info(">>>>>> postProcessAfterInitialization");
         return bean;
     }
 }
