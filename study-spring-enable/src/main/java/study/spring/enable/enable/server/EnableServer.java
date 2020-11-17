@@ -1,7 +1,6 @@
 package study.spring.enable.enable.server;
 
 import org.springframework.context.annotation.Import;
-import study.spring.enable.enable.server.selector.ServerImportSelector;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

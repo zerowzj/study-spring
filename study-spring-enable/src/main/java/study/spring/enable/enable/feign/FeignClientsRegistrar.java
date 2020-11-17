@@ -1,4 +1,4 @@
-package study.spring.enable.feign;
+package study.spring.enable.enable.feign;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

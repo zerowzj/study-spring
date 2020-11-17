@@ -1,14 +1,18 @@
-package study.spring.enable.enable.chat;
+package study.spring.enable.enable.feign;
 
 import org.springframework.context.annotation.Import;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import(ChatImportBeanDefinitionRegistrar.class)
-public @interface EnableChat {
+@Target(ElementType.TYPE)
+@Documented
+@Import(FeignClientsRegistrar.class)
+public @interface EnableFeignClients {
+
+    String name() default "";
 }

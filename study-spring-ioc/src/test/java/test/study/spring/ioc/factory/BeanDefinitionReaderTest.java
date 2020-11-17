@@ -13,7 +13,7 @@ public class BeanDefinitionReaderTest {
     public void test() {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
-        reader.loadBeanDefinitions("classpath:spring/spring-config.xml");
+        reader.loadBeanDefinitions("classpath:spring/spring-configuration.xml");
 
         ConfigBean myConfigBean = (ConfigBean)beanFactory.getBean("myConfigBean");
         log.info("{}", myConfigBean);

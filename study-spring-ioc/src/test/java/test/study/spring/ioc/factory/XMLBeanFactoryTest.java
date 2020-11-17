@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class XMLBeanFactoryTest {
 
-    private static final String CONFIG_LOCATION = "spring/spring-config.xml";
+    private static final String CONFIG_LOCATION = "spring/spring-configuration.xml";
 
     @Test
     public void test() throws Exception{

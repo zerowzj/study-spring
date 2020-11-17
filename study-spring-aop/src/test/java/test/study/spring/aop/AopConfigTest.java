@@ -8,7 +8,7 @@ import study.spring.aop.GreetingService;
 @Slf4j
 public class AopConfigTest {
 
-    private static final String CONFIG_LOCATION = "spring/spring-config.xml";
+    private static final String CONFIG_LOCATION = "spring/spring-configuration.xml";
 
     @Test
     public void test() {

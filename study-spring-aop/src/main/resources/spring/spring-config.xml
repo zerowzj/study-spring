@@ -4,13 +4,13 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-   <!-- （★）aop config by proxy -->
+   <!-- （★）aop configuration by proxy -->
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice definition -->
    <bean id="myBeforeAdvice" class="study.spring.aop.advice.MyBeforeAdvice"/>
    <bean id="myAfterReturningAdvice" class="study.spring.aop.advice.MyAfterReturningAdvice"/>
    <bean id="myMethodInterceptor" class="study.spring.aop.advice.MyMethodInterceptor"/>
-   <!-- proxy config -->
+   <!-- proxy configuration -->
    <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
       <property name="target" ref="greetingServiceTarget"/>
       <property name="interceptorNames">
@@ -21,20 +21,20 @@
          </list>
       </property>
    </bean>
-   <!-- auto proxy config -->
+   <!-- auto proxy configuration -->
    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
    </bean>
 
-   <!-- （★）aop config by tag -->
+   <!-- （★）aop configuration by tag -->
    <!-- advice definition -->
    <bean id="myAdvice" class="study.spring.aop.tag.MyAdvice"/>
-   <!-- aop config -->
+   <!-- aop configuration -->
    <aop:config>
       <!-- order: pointcut ==> advisor ==> aspect -->
       <aop:pointcut expression="execution(public * study.spring.aop.*Service.*(..))" id="myPointCut"/>
-      <!-- advisor config -->
+      <!-- advisor configuration -->
       <!--      <aop:advisor advice-ref="myAfterReturningAdvice" pointcut-ref="myPointCut"/>-->
-      <!-- aspect config-->
+      <!-- aspect configuration-->
       <aop:aspect ref="myAdvice" order="1">
          <aop:before pointcut-ref="myPointCut" method="before" arg-names="joinPoint"/>
          <aop:after pointcut-ref="myPointCut" method="after" arg-names="joinPoint"/>

@@ -1,4 +1,4 @@
-package study.spring.enable.enable.server.selector;
+package study.spring.enable.enable.server;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;

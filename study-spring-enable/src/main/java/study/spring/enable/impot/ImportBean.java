@@ -6,14 +6,14 @@ import lombok.extern.slf4j.Slf4j;
 public class ImportBean {
 
     static {
-        log.info(">>>>>> 初始化 ImportBean");
+        log.info(">>>>>> initialization");
     }
 
     public ImportBean() {
-        log.info(">>>>>> 实例化 ImportBean");
+        log.info(">>>>>> instantiation");
     }
 
     public void sayHi() {
-        log.info("sssssssss");
+        log.info("hi hi hi");
     }
 }

@@ -1,10 +1,8 @@
-package test.study.spring.enable;
+package test.study.spring.enable.enable;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.enable.enable.hello.HelloBean;
-import study.spring.enable.enable.hello.HelloCfg;
-import study.spring.enable.feign.FeignCfg;
+import study.spring.enable.enable.feign.FeignCfg;
 
 public class FeignTest {
 

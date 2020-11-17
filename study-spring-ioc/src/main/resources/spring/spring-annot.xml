@@ -6,12 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-   <!-- （★）ioc config -->
+   <!-- （★）ioc configuration -->
    <context:component-scan base-package="study.spring" use-default-filters="true">
       <!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
       <!--        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>-->
    </context:component-scan>
 
-   <!-- （★）aop config-->
+   <!-- （★）aop configuration-->
    <aop:aspectj-autoproxy/>
 </beans>
