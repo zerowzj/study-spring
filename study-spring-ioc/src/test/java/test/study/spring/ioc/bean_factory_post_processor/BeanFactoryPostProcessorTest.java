@@ -3,7 +3,7 @@ package test.study.spring.ioc.bean_factory_post_processor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean.LifecycleBean;
+import study.spring.ioc.bean_factory.xml.XmlBean;
 
 @Slf4j
 public class BeanFactoryPostProcessorTest {
@@ -14,7 +14,7 @@ public class BeanFactoryPostProcessorTest {
     public void test() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
-        LifecycleBean lifecycleBean = (LifecycleBean) ctx.getBean("lifecycleBean");
+        XmlBean lifecycleBean = (XmlBean) ctx.getBean("lifecycleBean");
         //不显示close不执行destroy-method方法
         ctx.close();
     }

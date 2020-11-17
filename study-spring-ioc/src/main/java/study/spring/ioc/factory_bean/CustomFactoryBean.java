@@ -1,8 +1,9 @@
 package study.spring.ioc.factory_bean;
 
 import org.springframework.beans.factory.FactoryBean;
+import study.spring.ioc.bean_factory.xml.XmlBean;
 
-public class CustomFactoryBean implements FactoryBean<Object> {
+public class CustomFactoryBean implements FactoryBean<XmlBean> {
 
     @Override
     public boolean isSingleton() {
@@ -10,12 +11,12 @@ public class CustomFactoryBean implements FactoryBean<Object> {
     }
 
     @Override
-    public Object getObject() throws Exception {
-        return null;
+    public XmlBean getObject() throws Exception {
+        return new XmlBean();
     }
 
     @Override
     public Class<?> getObjectType() {
-        return null;
+        return XmlBean.class;
     }
 }

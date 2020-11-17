@@ -1,4 +1,4 @@
-package test.study.spring.ioc.factory;
+package test.study.spring.ioc.bean_factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -8,9 +8,9 @@ import study.spring.ioc.bean.ConfigBean;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class ClassPathXmlApplicationContextTest {
+public class XmlTest {
 
-    private static final String CONFIG_LOCATION = "spring/spring-configuration.xml";
+    private static final String CONFIG_LOCATION = "spring/spring-xml.xml";
 
     @Test
     public void test() throws Exception {

@@ -1,16 +1,27 @@
-package test.study.spring.ioc.factory;
+package test.study.spring.ioc.bean_factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import study.spring.ioc.bean.AnnotBean;
-import study.spring.ioc.bean.LifecycleBean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import study.spring.ioc.bean_factory.annotation.AnnotationBean;
+import study.spring.ioc.bean_factory.xml.XmlBean;
 
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
 //@ComponentScan("study.spring.ioc.bean")
-public class AnnotationConfigApplicationContextTest {
+public class AnnotationTest {
+
+    String CONFIG_LOCATION = "spring/spring-annotation.xml";
+
+    @Test
+    public void xml_test() throws Exception {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
+        AnnotationBean annotBean = ctx.getBean(AnnotationBean.class);
+        log.info("{}", annotBean);
+        ctx.close();
+    }
 
     @Test
     public void test() throws Exception {
@@ -21,14 +32,14 @@ public class AnnotationConfigApplicationContextTest {
         //
 //        ctx.scan("study.spring.ioc.bean");
         //
-        ctx.registerBean(LifecycleBean.class);
+        ctx.registerBean(XmlBean.class);
 
         //需要手动刷新
         ctx.refresh();
         log.info("容器启动完成");
 
         TimeUnit.SECONDS.sleep(5);
-        AnnotBean annotBean = (AnnotBean) ctx.getBean("annotBean");
+        AnnotationBean annotBean = (AnnotationBean) ctx.getBean("annotBean");
         log.info("{}", annotBean);
 
         ctx.close();
