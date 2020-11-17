@@ -11,7 +11,7 @@
 
    <!-- （★）bean post processor -->
    <bean class="study.spring.ioc.bean_post_processor.CustomBeanPostProcessor"/>
-      <bean class="study.spring.ioc.bean_post_processor.CustomInstantiationAwareBeanPostProcessor"/>
+   <bean class="study.spring.ioc.bean_post_processor.CustomInstantiationAwareBeanPostProcessor"/>
 <!--      <bean class="study.spring.ioc.bean_post_processor.CustomDestructionAwareBeanPostProcessor"/>-->
    <!-- no ordered -->
 <!--   <bean class="study.spring.ioc.bean_post_processor.CustomMergedBeanDefinitionPostProcessor"/>-->
