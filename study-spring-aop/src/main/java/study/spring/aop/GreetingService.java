@@ -14,7 +14,7 @@ public class GreetingService {
     }
 
     public String sayBye(String name) {
-        String str = String.format("bye bye, %s", name);
+        String str = String.format("byebye, %s", name);
         log.info(str);
         return str;
     }
