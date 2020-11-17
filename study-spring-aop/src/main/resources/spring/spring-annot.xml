@@ -9,6 +9,6 @@
    <context:component-scan base-package="study.spring">
    </context:component-scan>
 
-   <!-- （★）aop configuration-->
+   <!-- aop configuration -->
    <aop:aspectj-autoproxy/>
 </beans>
