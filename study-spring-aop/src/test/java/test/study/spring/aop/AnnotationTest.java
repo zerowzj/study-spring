@@ -2,6 +2,7 @@ package test.study.spring.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.aop.GreetingService;
 
@@ -20,7 +21,9 @@ public class AnnotationTest {
 
     @Test
     public void annotation_test() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.scan("study.spring.aop");
+        ctx.refresh();
         //
         GreetingService greetingService = (GreetingService) ctx.getBean("greetingService");
         greetingService.sayHi("wangzhj");

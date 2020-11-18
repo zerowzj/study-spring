@@ -43,13 +43,13 @@ public class CustomAspect {
         log.info(">>>>>>>>>> after");
     }
 
-    /**
-     * 环绕通知
-     */
-    @Around("myPointcut()")
-    public void around(JoinPoint joinPoint) {
-        log.info(">>>>>>>>>> after");
-    }
+//    /**
+//     * 环绕通知
+//     */
+//    @Around("myPointcut()")
+//    public void around(JoinPoint joinPoint) {
+//        log.info(">>>>>>>>>> around");
+//    }
 
     /**
      * 返回通知
