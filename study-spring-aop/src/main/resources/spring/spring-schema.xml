@@ -4,30 +4,8 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-   <!-- （★）aop configuration by proxy -->
-   <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice definition -->
-   <bean id="myBeforeAdvice" class="study.spring.aop.advice.MyBeforeAdvice"/>
-   <bean id="myAfterReturningAdvice" class="study.spring.aop.advice.MyAfterReturningAdvice"/>
-   <bean id="myMethodInterceptor" class="study.spring.aop.advice.MyMethodInterceptor"/>
-   <!-- proxy configuration -->
-   <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
-      <property name="target" ref="greetingServiceTarget"/>
-      <property name="interceptorNames">
-         <list>
-            <value>myBeforeAdvice</value>
-            <value>myAfterReturningAdvice</value>
-            <value>myMethodInterceptor</value>
-         </list>
-      </property>
-   </bean>
-   <!-- auto proxy configuration -->
-   <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
-   </bean>
-
-   <!-- （★）aop configuration by tag -->
-   <!-- advice definition -->
-   <bean id="myAdvice" class="study.spring.aop.tag.MyAdvice"/>
+   <bean id="myAdvice" class="study.spring.aop.schema.CustomAdvice"/>
    <!-- aop configuration -->
    <aop:config>
       <!-- order: pointcut ==> advisor ==> aspect -->

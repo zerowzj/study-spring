@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <!-- （★）aop configuration by ProxyFactoryBean -->
+   <!-- advice target -->
+   <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
+   <!-- advice definition -->
+   <bean id="myBeforeAdvice" class="study.spring.aop.xml.advice.CustomBeforeAdvice"/>
+   <bean id="myAfterReturningAdvice" class="study.spring.aop.xml.advice.CustomAfterReturningAdvice"/>
+   <bean id="myMethodInterceptor" class="study.spring.aop.xml.advice.CustomMethodInterceptor"/>
+   <!-- proxy configuration -->
+   <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="target" ref="greetingServiceTarget"/>
+      <property name="interceptorNames">
+         <list>
+            <value>myBeforeAdvice</value>
+            <value>myAfterReturningAdvice</value>
+            <value>myMethodInterceptor</value>
+         </list>
+      </property>
+   </bean>
+
+   <!-- （★）auto proxy configuration -->
+   <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+   </bean>
+</beans>

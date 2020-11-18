@@ -53,6 +53,6 @@
     <!-- （★）注解            -->
     <!-- ==================== -->
     <aop:aspectj-autoproxy/>
-    <bean class="study.spring.aop.annotation.MyAspect">
+    <bean class="study.spring.aop.annotation.CustomAspect">
     </bean>
 </beans>
