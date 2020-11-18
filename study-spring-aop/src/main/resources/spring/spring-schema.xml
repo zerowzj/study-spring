@@ -17,10 +17,8 @@
          <aop:before pointcut-ref="myPointCut" method="before" arg-names="joinPoint"/>
          <aop:after pointcut-ref="myPointCut" method="after" arg-names="joinPoint"/>
          <aop:around pointcut-ref="myPointCut" method="around" arg-names="joinPoint"/>
-         <aop:after-throwing pointcut-ref="myPointCut" method="afterThrowing" arg-names="joinPoint, ex"
-                             throwing="ex"/>
-         <aop:after-returning pointcut-ref="myPointCut" method="afterReturning" arg-names="joinPoint, retValue"
-                              returning="retValue"/>
+         <aop:after-throwing pointcut-ref="myPointCut" method="afterThrowing" arg-names="joinPoint, ex" throwing="ex"/>
+         <aop:after-returning pointcut-ref="myPointCut" method="afterReturning" arg-names="joinPoint, retValue" returning="retValue"/>
       </aop:aspect>
    </aop:config>
 </beans>
