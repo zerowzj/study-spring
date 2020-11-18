@@ -19,7 +19,7 @@ public class ProxyFactoryBeanTest {
         BeanDefinitionBuilder b1 = BeanDefinitionBuilder.genericBeanDefinition(CustomBeforeAdvice.class);
         BeanDefinition bd1 = b1.getBeanDefinition();
         factory.registerBeanDefinition("customBeforeAdvice", bd1);
-        //
+        //ProxyFactoryBean
         BeanDefinitionBuilder b2 = BeanDefinitionBuilder.genericBeanDefinition(ProxyFactoryBean.class);
         b2.addPropertyValue("target", new GreetingService());
         b2.addPropertyValue("interceptorNames", "customBeforeAdvice");
