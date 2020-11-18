@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.aop.GreetingService;
 
 @Slf4j
-public class AnnotationTest {
+public class AopAnnotationTest {
 
     private static final String CONFIG_LOCATION = "spring/spring-annotation.xml";
 
