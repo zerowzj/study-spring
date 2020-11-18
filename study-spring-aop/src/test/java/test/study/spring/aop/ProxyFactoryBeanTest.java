@@ -27,6 +27,7 @@ public class ProxyFactoryBeanTest {
         factory.registerBeanDefinition("greetingService", bd2);
 
         GreetingService greetingService = (GreetingService) factory.getBean("greetingService");
+        log.info(">>>>>> {}", greetingService.getClass().getSimpleName());
         greetingService.sayHi("11111111111");
 
     }
