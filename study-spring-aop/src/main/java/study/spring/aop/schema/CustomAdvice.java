@@ -11,7 +11,9 @@ public class CustomAdvice {
      * 前置通知
      */
     public void before(JoinPoint joinPoint) {
-        log.info("before");
+        Object target = joinPoint.getTarget();
+        Object[] args = joinPoint.getArgs();
+          log.info("before");
     }
 
     /**
