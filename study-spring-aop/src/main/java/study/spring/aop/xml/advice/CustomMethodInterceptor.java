@@ -9,6 +9,10 @@ public class CustomMethodInterceptor implements MethodInterceptor {
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
-        return invocation;
+        log.info("sfasdfasdfasdf");
+        invocation.getMethod();
+        invocation.getArguments();
+        Object ret = invocation.proceed();
+        return ret;
     }
 }

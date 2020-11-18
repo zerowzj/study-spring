@@ -11,7 +11,6 @@ public class CustomAfterReturningAdvice implements AfterReturningAdvice {
     @Override
     public void afterReturning(Object returnValue, Method method,
                                Object[] args, Object target) throws Throwable {
-
-        log.info("aaaaaaa");
+        log.info("return_value= {}", returnValue);
     }
 }

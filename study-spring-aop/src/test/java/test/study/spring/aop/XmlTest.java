@@ -15,6 +15,7 @@ public class XmlTest {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
         //
         GreetingService greetingService = (GreetingService) ctx.getBean("greetingService");
+        log.info(">>>>>> {}", greetingService.getClass().getSimpleName());
         greetingService.sayHi("wangzhj");
     }
 }
