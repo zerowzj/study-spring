@@ -6,17 +6,17 @@
    <!-- advice target -->
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice definition -->
-   <bean id="myBeforeAdvice" class="study.spring.aop.xml.advice.CustomBeforeAdvice"/>
-   <bean id="myAfterReturningAdvice" class="study.spring.aop.xml.advice.CustomAfterReturningAdvice"/>
-   <bean id="myMethodInterceptor" class="study.spring.aop.xml.advice.CustomMethodInterceptor"/>
+   <bean id="customBeforeAdvice" class="study.spring.aop.xml.advice.CustomBeforeAdvice"/>
+   <bean id="customAfterReturningAdvice" class="study.spring.aop.xml.advice.CustomAfterReturningAdvice"/>
+   <bean id="customMethodInterceptor" class="study.spring.aop.xml.advice.CustomMethodInterceptor"/>
    <!-- proxy configuration -->
    <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
       <property name="target" ref="greetingServiceTarget"/>
       <property name="interceptorNames">
          <list>
-            <value>myBeforeAdvice</value>
-            <value>myAfterReturningAdvice</value>
-            <value>myMethodInterceptor</value>
+            <value>customBeforeAdvice</value>
+            <value>customAfterReturningAdvice</value>
+            <value>customMethodInterceptor</value>
          </list>
       </property>
    </bean>
