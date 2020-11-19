@@ -1,4 +1,4 @@
-package study.spring.aop.xml.advice;
+package study.spring.aop.bean.advice;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.AfterReturningAdvice;

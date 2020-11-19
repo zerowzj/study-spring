@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Slf4j
 public class ClassPathXmlApplicationContextTest {
 
-    String CONFIG_LOCATION = "spring/spring-xml.xml";
+    String CONFIG_LOCATION = "spring/spring-bean.bean";
 
     @Test
     public void test() {

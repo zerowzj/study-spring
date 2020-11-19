@@ -272,7 +272,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     }
 
     /**
-     * Set an implementation of the {@code org.xml.sax.ErrorHandler}
+     * Set an implementation of the {@code org.bean.sax.ErrorHandler}
      * interface for custom handling of XML parsing errors and warnings.
      * <p>If not set, a default SimpleSaxErrorHandler is used that simply
      * logs warnings using the logger instance of the view class,

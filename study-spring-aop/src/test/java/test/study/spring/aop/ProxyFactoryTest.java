@@ -5,8 +5,8 @@ import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.NameMatchMethodPointcutAdvisor;
 import study.spring.aop.GreetingService;
-import study.spring.aop.xml.advice.CustomAfterReturningAdvice;
-import study.spring.aop.xml.advice.CustomBeforeAdvice;
+import study.spring.aop.bean.advice.CustomAfterReturningAdvice;
+import study.spring.aop.bean.advice.CustomBeforeAdvice;
 
 @Slf4j
 public class ProxyFactoryTest {

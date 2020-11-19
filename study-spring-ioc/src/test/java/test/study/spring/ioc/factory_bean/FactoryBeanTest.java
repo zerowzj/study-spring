@@ -8,7 +8,7 @@ import study.spring.ioc.bean_factory.xml.XmlBean;
 @Slf4j
 public class FactoryBeanTest {
 
-    String CONFIG_LOCATION = "spring/spring-factory_bean.xml";
+    String CONFIG_LOCATION = "spring/spring-factory_bean.bean";
 
     @Test
     public void test() {

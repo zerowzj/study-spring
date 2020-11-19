@@ -6,9 +6,9 @@
    <!-- advice target -->
    <bean id="greetingServiceTarget" class="study.spring.aop.GreetingService"/>
    <!-- advice definition -->
-   <bean id="customBeforeAdvice" class="study.spring.aop.xml.advice.CustomBeforeAdvice"/>
-   <bean id="customAfterReturningAdvice" class="study.spring.aop.xml.advice.CustomAfterReturningAdvice"/>
-   <bean id="customMethodInterceptor" class="study.spring.aop.xml.advice.CustomMethodInterceptor"/>
+   <bean id="customBeforeAdvice" class="study.spring.aop.bean.advice.CustomBeforeAdvice"/>
+   <bean id="customAfterReturningAdvice" class="study.spring.aop.bean.advice.CustomAfterReturningAdvice"/>
+   <bean id="customMethodInterceptor" class="study.spring.aop.bean.advice.CustomMethodInterceptor"/>
    <!-- proxy configuration -->
    <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
       <property name="target" ref="greetingServiceTarget"/>

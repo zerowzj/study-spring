@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import study.spring.aop.GreetingService;
-import study.spring.aop.xml.advice.CustomBeforeAdvice;
+import study.spring.aop.bean.advice.CustomBeforeAdvice;
 
 @Slf4j
 public class ProxyFactoryBeanTest {

@@ -8,7 +8,7 @@ import study.spring.ioc.bean_factory.xml.XmlBean;
 @Slf4j
 public class BeanFactoryPostProcessorTest {
 
-    String CONFIG_LOCATION = "spring/spring-bean_factory_post_processor.xml";
+    String CONFIG_LOCATION = "spring/spring-bean_factory_post_processor.bean";
 
     @Test
     public void test() {

@@ -10,7 +10,7 @@ import org.springframework.core.io.Resource;
 @Slf4j
 public class XmlBeanFactoryTest {
 
-    String CONFIG_LOCATION = "spring/spring-xml.xml";
+    String CONFIG_LOCATION = "spring/spring-bean.bean";
 
     @Test
     public void test() {

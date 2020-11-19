@@ -10,7 +10,7 @@ import study.spring.ioc.bean_factory.annotation.AnnotationBean;
 //@ComponentScan("study.spring.ioc.bean_factory.annotation")
 public class AnnotationTest {
 
-    String CONFIG_LOCATION = "spring/spring-annotation.xml";
+    String CONFIG_LOCATION = "spring/spring-annotation.bean";
 
     @Test
     public void xml_test() {

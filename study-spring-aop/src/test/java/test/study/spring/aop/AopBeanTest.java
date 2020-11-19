@@ -6,9 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import study.spring.aop.GreetingService;
 
 @Slf4j
-public class AopXmlTest {
+public class AopBeanTest {
 
-    String CONFIG_LOCATION = "spring/spring-xml.xml";
+    String CONFIG_LOCATION = "spring/spring-aop-bean.bean";
 
     @Test
     public void test() {
