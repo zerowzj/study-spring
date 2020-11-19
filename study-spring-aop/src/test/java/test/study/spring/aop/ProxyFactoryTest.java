@@ -24,7 +24,9 @@ public class ProxyFactoryTest {
         proxyFactory.setTarget(new GreetingService());
         proxyFactory.addAdvisor(advisor1);
         proxyFactory.addAdvisor(advisor2);
+
         GreetingService greetingService = (GreetingService) proxyFactory.getProxy();
+        log.info(">>>>>> {}", greetingService.getClass());
         greetingService.sayHi("wangzhj");
     }
 }
