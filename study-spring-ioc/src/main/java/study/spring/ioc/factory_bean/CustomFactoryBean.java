@@ -1,7 +1,7 @@
 package study.spring.ioc.factory_bean;
 
 import org.springframework.beans.factory.FactoryBean;
-import study.spring.ioc.bean_factory.xml.XmlBean;
+import study.spring.ioc.bean_factory.bean.XmlBean;
 
 public class CustomFactoryBean implements FactoryBean<XmlBean> {
 

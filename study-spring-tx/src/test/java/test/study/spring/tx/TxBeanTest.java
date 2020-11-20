@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Slf4j
 public class TxBeanTest {
 
-    String CONFIG_LOCATION = "spring/spring-tx-bean.xml";
+    String CONFIG_LOCATION = "spring/spring-tx-bean.bean";
 
     @Test
     public void test() {

@@ -1,4 +1,4 @@
-package study.spring.ioc.bean_factory.xml;
+package study.spring.ioc.bean_factory.bean;
 
 import lombok.Getter;
 import lombok.ToString;

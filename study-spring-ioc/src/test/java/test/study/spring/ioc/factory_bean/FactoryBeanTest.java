@@ -3,7 +3,7 @@ package test.study.spring.ioc.factory_bean;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean_factory.xml.XmlBean;
+import study.spring.ioc.bean_factory.bean.XmlBean;
 
 @Slf4j
 public class FactoryBeanTest {

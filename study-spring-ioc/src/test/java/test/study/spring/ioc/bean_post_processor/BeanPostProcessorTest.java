@@ -3,12 +3,12 @@ package test.study.spring.ioc.bean_post_processor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import study.spring.ioc.bean_factory.xml.XmlBean;
+import study.spring.ioc.bean_factory.bean.XmlBean;
 
 @Slf4j
 public class BeanPostProcessorTest {
 
-    String CONFIG_LOCATION = "spring/spring-bean_post_processor.xml";
+    String CONFIG_LOCATION = "spring/spring-bean_post_processor.bean";
 
     @Test
     public void test() {
